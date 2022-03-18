@@ -32,7 +32,7 @@ public class StressTest extends Thread {
 
         ResultSet queryAll = null;
 
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 30; i++) {
             try {
                 queryAll = session.selectConcreteCarAndCheckAvailability(carTableBrand[randomNumberOfCarBrand], carTableModel[randomNumberOfCarModel], userId);
                 for (Row row : queryAll) {
@@ -58,13 +58,15 @@ public class StressTest extends Thread {
                         }
 
                         //logger.info("wolne auto, zmieniam na false" + registrationNumber);
-                        if (i > 15)session.updateCarAvailabilityToDefault(registrationNumber);
+                        if (i%5 == 0)session.updateCarAvailabilityToDefault(registrationNumber);
                         break;
                     }
 
 
                 }
-            } catch (BackendException e) {
+
+                Thread.sleep(300);
+            } catch (BackendException | InterruptedException e) {
                 e.printStackTrace();
             }
         }

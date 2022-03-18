@@ -1,8 +1,8 @@
-136  INFO  c.d.driver.core.GuavaCompatibility: Detected Guava >= 19 in the classpath, using modern compatibility layer
+137  INFO  c.d.driver.core.GuavaCompatibility: Detected Guava >= 19 in the classpath, using modern compatibility layer
 240  INFO  com.datastax.driver.core.Native: Could not load JNR C Library, native system calls through this library will not be available (set this logger level to DEBUG to see the full stack trace).
 240  INFO  c.datastax.driver.core.ClockFactory: Using java.lang.System clock to generate timestamps.
 308  INFO  i.n.util.internal.PlatformDependent: Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system unstability.
-313  WARN  com.datastax.driver.core.NettyUtil: Found Netty's native epoll transport in the classpath, but epoll is not available. Using NIO instead.
+312  WARN  com.datastax.driver.core.NettyUtil: Found Netty's native epoll transport in the classpath, but epoll is not available. Using NIO instead.
 java.lang.NoClassDefFoundError: Could not initialize class io.netty.util.internal.PlatformDependent0
 	at io.netty.util.internal.PlatformDependent.getClassLoader(PlatformDependent.java:624)
 	at io.netty.channel.epoll.Native.loadNativeLibrary(Native.java:269)
@@ -19,9 +19,9 @@ java.lang.NoClassDefFoundError: Could not initialize class io.netty.util.interna
 	at com.datastax.driver.core.Cluster.connect(Cluster.java:280)
 	at cassdemo.backend.BackendSession.<init>(BackendSession.java:40)
 	at cassdemo.Main.main(Main.java:35)
-582  INFO  c.d.d.c.p.DCAwareRoundRobinPolicy: Using data-center name 'datacenter1' for DCAwareRoundRobinPolicy (if this is incorrect, please provide the correct datacenter name with DCAwareRoundRobinPolicy constructor)
-584  INFO  com.datastax.driver.core.Cluster: New Cassandra host /172.20.0.3:9042 added
-584  INFO  com.datastax.driver.core.Cluster: New Cassandra host /172.20.0.4:9042 added
-584  INFO  com.datastax.driver.core.Cluster: New Cassandra host /127.0.0.1:9042 added
-694  INFO  cassdemo.backend.BackendSession: Statements prepared
-6957 INFO  cassdemo.backend.BackendSession: All cars reservation deleted
+575  INFO  c.d.d.c.p.DCAwareRoundRobinPolicy: Using data-center name 'datacenter1' for DCAwareRoundRobinPolicy (if this is incorrect, please provide the correct datacenter name with DCAwareRoundRobinPolicy constructor)
+577  INFO  com.datastax.driver.core.Cluster: New Cassandra host /172.20.0.3:9042 added
+577  INFO  com.datastax.driver.core.Cluster: New Cassandra host /172.20.0.4:9042 added
+577  INFO  com.datastax.driver.core.Cluster: New Cassandra host /127.0.0.1:9042 added
+666  INFO  cassdemo.backend.BackendSession: Statements prepared
+8961 INFO  cassdemo.backend.BackendSession: All cars reservation deleted

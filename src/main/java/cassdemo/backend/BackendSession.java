@@ -308,10 +308,8 @@ public class BackendSession {
 
 
 	public void createCar() throws BackendException {
-		String[] carTableBrand = {"Mercedes-Benz", "BMW", "Renualt", "Lamborghini"};
-		//"Ford", "Volkswagen","Audi","Hyundai","Kia"};
-		String[] carTableModel = {"1050e small", "1586w big", "6947aa medium", "123"};
-		// "1", "332w","Speed","Off-road","Electric"};
+		String[] carTableBrand = {"Mercedes-Benz", "BMW", "Renualt", "Lamborghini", "Ford", "Volkswagen","Audi","Hyundai","Kia"};
+		String[] carTableModel = {"1050e small", "1586w big", "6947aa medium", "123", "1", "332w","Speed","Off-road","Electric"};
 		String[] color = {"black", "red", "white", "grey", "yellow", "blue"};
         Random rand1 = new Random();
 		Random rand2 = new Random();
@@ -319,8 +317,8 @@ public class BackendSession {
 		Random rand4 = new Random();
 
 
-		int randomNumberOfCarBrand = rand1.nextInt(6);
-		int randomNumberOfCarModel = rand2.nextInt(6);
+		int randomNumberOfCarBrand = rand1.nextInt(9);
+		int randomNumberOfCarModel = rand2.nextInt(9);
 
 		String registrationNumber = registrationNumberGeneration();
 

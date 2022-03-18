@@ -61,10 +61,11 @@ public class Main {
 				}
 				case "2":
 				{
-					ExecutorService executorService = Executors.newFixedThreadPool(200);
-					for (int i = 0; i < 200; i++) {
+					ExecutorService executorService = Executors.newFixedThreadPool(100);
+					for (int i = 0; i < 100; i++) {
 						executorService.execute(new Thread(new StressTest(session)));
 					}
+
 
 					break;
 				}
