@@ -12,6 +12,15 @@ CREATE TABLE Cars (
   PRIMARY KEY((brand, model), registrationNumber)
 );
 
+CREATE TABLE Cars_by_registrationNumber (
+  registrationNumber varchar,
+  model varchar,
+  brand varchar,
+  productionYear varchar,
+  color varchar,
+  PRIMARY KEY(registrationNumber)
+);
+
 INSERT INTO Cars (registrationNumber, model, brand, productionYear, color) VALUES ('LLE5929','GLE Coupe 350 d 4-Matic','Mercedes-Benz','2018','white');
 INSERT INTO Cars (registrationNumber, model, brand, productionYear, color) VALUES ('WX91806','Seria 5 530d','BMW','2005','grey');
 INSERT INTO Cars (registrationNumber, model, brand, productionYear, color) VALUES ('NOL9272','Capture 1.0 TCe Zen','Renualt','2020','copper');

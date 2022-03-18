@@ -32,7 +32,7 @@ public class StressTest extends Thread {
 
         ResultSet queryAll = null;
 
-        for (int i = 0; i < 30; i++) {
+        //wynajecie auta
             try {
                 queryAll = session.selectConcreteCarAndCheckAvailability(carTableBrand[randomNumberOfCarBrand], carTableModel[randomNumberOfCarModel], userId);
                 for (Row row : queryAll) {
@@ -50,26 +50,58 @@ public class StressTest extends Thread {
 
 
                         if (userId.equals(userIDtoCheck)) {
-                            System.out.println("OK");
+                            logger.info("User w zglaszajacy: " + userId + " User w bazie: " + userIDtoCheck);
                         } else if (userIDtoCheck == null) {
-                            System.out.println("Brak usera w bazie.");
+                            logger.info("User w zglaszajacy: " + userId + " User w bazie: " + userIDtoCheck);
                         } else {
-                            System.out.println("Inny user niz wprowadzon");
+                            logger.info("User w zglaszajacy: " + userId + " User w bazie: " + userIDtoCheck);
                         }
 
                         //logger.info("wolne auto, zmieniam na false" + registrationNumber);
-                        if (i%5 == 0)session.updateCarAvailabilityToDefault(registrationNumber);
+                        session.updateCarAvailabilityToDefault(registrationNumber);
                         break;
                     }
 
 
                 }
-
                 Thread.sleep(300);
+
             } catch (BackendException | InterruptedException e) {
                 e.printStackTrace();
             }
+
+        //stworzenie nowego auta + wynajęcie go + oddanie
+        try {
+            String newCarRegistrationNumber = session.createCarNew();
+
+                boolean carAvailability = session.isAvailable(newCarRegistrationNumber);
+
+                //logger.info("Car avail.: " + carAvailability);
+
+                if (carAvailability) {
+                    session.updateCarAvailability(newCarRegistrationNumber, userId);
+                    UUID userIDtoCheck = session.getUserIDbyCarRegistrationNumber(newCarRegistrationNumber);
+//                    System.out.println(userIDtoCheck);
+//                    System.out.println(userId);
+
+
+                    if (userId.equals(userIDtoCheck)) {
+                        logger.info("User w zglaszajacy: " + userId + " User w bazie: " + userIDtoCheck);
+                    } else if (userIDtoCheck == null) {
+                        logger.info("User w zglaszajacy: " + userId + " User w bazie: " + userIDtoCheck);
+                    } else {
+                        logger.info("User w zglaszajacy: " + userId + " User w bazie: " + userIDtoCheck);
+                    }
+
+                    //logger.info("wolne auto, zmieniam na false" + registrationNumber);
+                    session.updateCarAvailabilityToDefault(newCarRegistrationNumber);
+                }
+            Thread.sleep(300);
+
+        } catch (BackendException | InterruptedException e) {
+            e.printStackTrace();
         }
+
 
 
 

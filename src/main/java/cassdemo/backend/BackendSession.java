@@ -282,11 +282,26 @@ public class BackendSession {
 		}
 	}
 
+	public void insertCarRegistrationToCarStatus(String registrationNumber) throws BackendException {
+
+		BoundStatement insertIntoCarStatus = new BoundStatement(INSERT_INTO_CARS_STATUS_INIT);
+
+		ResultSet rs = null;
+
+		try {
+			rs = session.execute(insertIntoCarStatus);
+		} catch (Exception e) {
+			throw new BackendException("Could not perform a query. " + e.getMessage() + ".", e);
+		}
+
+	}
+
 	public String registrationNumberGeneration() throws BackendException {
 		String registrationNumber;
 		Random rnd = new Random();
 
 
+		while(true){
 			String c = String.valueOf((char) ('A' + rnd.nextInt(26)));
 			String c1 = String.valueOf((char) ('A' + rnd.nextInt(26)));
 			String c2 = String.valueOf((char) ('A' + rnd.nextInt(26)));
@@ -303,7 +318,10 @@ public class BackendSession {
 //			}
 //			System.out.println("W bazie jest juz taka rejstracja");
 
-		return registrationNumber;
+			String registrationNumberIsAvailable = session.carRegistrationNumberCheck(registrationNumber);
+			if (registrationNumberIsAvailable == null)return registrationNumber;
+		}
+
 	}
 
 
@@ -334,6 +352,39 @@ public class BackendSession {
 				color[randomNumberOfColor]
 				);
 
+		insertCarRegistrationToCarStatus(registrationNumber);
+
+	}
+
+	public String createCarNew() throws BackendException {
+		String[] carTableBrand = {"Mercedes-Benz", "BMW", "Renualt", "Lamborghini", "Ford", "Volkswagen","Audi","Hyundai","Kia"};
+		String[] carTableModel = {"1050e small", "1586w big", "6947aa medium", "123", "1", "332w","Speed","Off-road","Electric"};
+		String[] color = {"black", "red", "white", "grey", "yellow", "blue"};
+		Random rand1 = new Random();
+		Random rand2 = new Random();
+//		Random rand3 = new Random();
+		Random rand4 = new Random();
+
+
+		int randomNumberOfCarBrand = rand1.nextInt(9);
+		int randomNumberOfCarModel = rand2.nextInt(9);
+
+		String registrationNumber = registrationNumberGeneration();
+
+//		int low = 2000;
+//		int high = 2022;
+//		String productionYear = String.valueOf(rand3.nextInt(high-low) + low);
+		int randomNumberOfColor = rand4.nextInt(6);
+
+		upsertCar(registrationNumber,
+				carTableModel[randomNumberOfCarModel],
+				carTableBrand[randomNumberOfCarBrand],
+				"2022",
+				color[randomNumberOfColor]
+		);
+
+		insertCarRegistrationToCarStatus(registrationNumber);
+		return registrationNumber;
 	}
 
 
