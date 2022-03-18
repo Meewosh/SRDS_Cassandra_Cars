@@ -37,11 +37,11 @@ public class Main {
 
 
 		while(true){
-			System.out.println("\n0 - zamkniecie programu oraz wyczyszczenie tabeli Reservation_Cars");
+			System.out.println("\n0 - zamkniecie programu oraz wyczyszczenie tabeli Cars_status");
 			System.out.println("1 - Auta");
 			System.out.println("2 - Stress Test");
-			System.out.println("3 - Wyczyszczenie tablei Reservation_Cars");
-			System.out.println("4 - Tabela Reservation_Cars");
+			System.out.println("3 - Wyczyszczenie tablei Cars_status");
+			System.out.println("4 - Stworzenie Aut");
 			System.out.println("5 - Transfer Rejstracji do tabeli Car Status");
 
 
@@ -50,7 +50,7 @@ public class Main {
 			switch (mode){
 				case "0":
 				{
-//					session.deleteAll();
+
 					System.exit(0);
 				}
 				case "1":
@@ -61,8 +61,8 @@ public class Main {
 				}
 				case "2":
 				{
-					ExecutorService executorService = Executors.newFixedThreadPool(15);
-					for (int i = 0; i < 15; i++) {
+					ExecutorService executorService = Executors.newFixedThreadPool(200);
+					for (int i = 0; i < 200; i++) {
 						executorService.execute(new Thread(new StressTest(session)));
 					}
 
@@ -76,8 +76,7 @@ public class Main {
 				}
 				case "4":
 				{
-					String output = session.selectAllCarReservation();
-					System.out.println("Cars: \n" + output);
+					for (int i = 0; i < 1500; i++) session.createCar();
 
 					break;
 				}

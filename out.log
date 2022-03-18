@@ -1,8 +1,8 @@
-143  INFO  c.d.driver.core.GuavaCompatibility: Detected Guava >= 19 in the classpath, using modern compatibility layer
-270  INFO  com.datastax.driver.core.Native: Could not load JNR C Library, native system calls through this library will not be available (set this logger level to DEBUG to see the full stack trace).
-270  INFO  c.datastax.driver.core.ClockFactory: Using java.lang.System clock to generate timestamps.
-340  INFO  i.n.util.internal.PlatformDependent: Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system unstability.
-346  WARN  com.datastax.driver.core.NettyUtil: Found Netty's native epoll transport in the classpath, but epoll is not available. Using NIO instead.
+136  INFO  c.d.driver.core.GuavaCompatibility: Detected Guava >= 19 in the classpath, using modern compatibility layer
+240  INFO  com.datastax.driver.core.Native: Could not load JNR C Library, native system calls through this library will not be available (set this logger level to DEBUG to see the full stack trace).
+240  INFO  c.datastax.driver.core.ClockFactory: Using java.lang.System clock to generate timestamps.
+308  INFO  i.n.util.internal.PlatformDependent: Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system unstability.
+313  WARN  com.datastax.driver.core.NettyUtil: Found Netty's native epoll transport in the classpath, but epoll is not available. Using NIO instead.
 java.lang.NoClassDefFoundError: Could not initialize class io.netty.util.internal.PlatformDependent0
 	at io.netty.util.internal.PlatformDependent.getClassLoader(PlatformDependent.java:624)
 	at io.netty.channel.epoll.Native.loadNativeLibrary(Native.java:269)
@@ -17,89 +17,11 @@ java.lang.NoClassDefFoundError: Could not initialize class io.netty.util.interna
 	at com.datastax.driver.core.Cluster.init(Cluster.java:159)
 	at com.datastax.driver.core.Cluster.connectAsync(Cluster.java:330)
 	at com.datastax.driver.core.Cluster.connect(Cluster.java:280)
-	at cassdemo.backend.BackendSession.<init>(BackendSession.java:39)
+	at cassdemo.backend.BackendSession.<init>(BackendSession.java:40)
 	at cassdemo.Main.main(Main.java:35)
-665  INFO  c.d.d.c.p.DCAwareRoundRobinPolicy: Using data-center name 'datacenter1' for DCAwareRoundRobinPolicy (if this is incorrect, please provide the correct datacenter name with DCAwareRoundRobinPolicy constructor)
-668  INFO  com.datastax.driver.core.Cluster: New Cassandra host /127.0.0.1:9042 added
-668  INFO  com.datastax.driver.core.Cluster: New Cassandra host /172.19.0.4:9042 added
-765  INFO  cassdemo.backend.BackendSession: Statements prepared
-9872 INFO  cassdemo.backend.BackendSession: dupa1
-9872 INFO  cassdemo.backend.BackendSession: dupa1
-9872 INFO  cassdemo.backend.BackendSession: dupa1
-9872 INFO  cassdemo.backend.BackendSession: dupa1
-9873 INFO  cassdemo.backend.BackendSession: dupa1
-9873 INFO  cassdemo.backend.BackendSession: dupa1
-9874 INFO  cassdemo.backend.BackendSession: dupa1
-9874 INFO  cassdemo.backend.BackendSession: dupa1
-9874 INFO  cassdemo.backend.BackendSession: dupa1
-9875 INFO  cassdemo.backend.BackendSession: dupa1
-9876 INFO  cassdemo.backend.BackendSession: dupa1
-9876 INFO  cassdemo.backend.BackendSession: dupa1
-9877 INFO  cassdemo.backend.BackendSession: dupa1
-9878 INFO  cassdemo.backend.BackendSession: dupa1
-9879 INFO  cassdemo.backend.BackendSession: Row[Renualt, Capture 1.0 TCe Zen, NOL9272, copper, 2020]
-9880 INFO  cassdemo.backend.BackendSession: dupa1
-9881 INFO  cassdemo.backend.BackendSession: Row[Renualt, Capture 1.0 TCe Zen, NOL9272, copper, 2020]
-9881 INFO  cassdemo.backend.BackendSession: Row[Renualt, Capture 1.0 TCe Zen, NOL9272, copper, 2020]
-9885 INFO  cassdemo.backend.BackendSession: Car avail.: true
-9886 INFO  cassdemo.backend.BackendSession: Car avail.: true
-9891 INFO  cassdemo.backend.BackendSession: wolne auto, zmieniam na falseNOL9273
-9897 INFO  cassdemo.backend.BackendSession: Row[Renualt, Capture 1.0 TCe Zen, NOL9272, copper, 2020]
-9898 INFO  cassdemo.backend.BackendSession: Row[Renualt, Capture 1.0 TCe Zen, NOL9272, copper, 2020]
-9898 INFO  cassdemo.backend.BackendSession: Row[Renualt, Capture 1.0 TCe Zen, NOL9272, copper, 2020]
-9899 INFO  cassdemo.backend.BackendSession: Row[Renualt, Capture 1.0 TCe Zen, NOL9272, copper, 2020]
-9900 INFO  cassdemo.backend.BackendSession: Row[Renualt, Capture 1.0 TCe Zen, NOL9272, copper, 2020]
-9900 INFO  cassdemo.backend.BackendSession: Row[Renualt, Capture 1.0 TCe Zen, NOL9272, copper, 2020]
-9901 INFO  cassdemo.backend.BackendSession: Row[Renualt, Capture 1.0 TCe Zen, NOL9272, copper, 2020]
-9901 INFO  cassdemo.backend.BackendSession: Row[Renualt, Capture 1.0 TCe Zen, NOL9272, copper, 2020]
-9902 INFO  cassdemo.backend.BackendSession: Row[Renualt, Capture 1.0 TCe Zen, NOL9272, copper, 2020]
-9904 INFO  cassdemo.backend.BackendSession: Car avail.: false
-9904 INFO  cassdemo.backend.BackendSession: Car avail.: false
-9906 INFO  cassdemo.backend.BackendSession: Car avail.: false
-9906 INFO  cassdemo.backend.BackendSession: Car avail.: false
-9906 INFO  cassdemo.backend.BackendSession: Row[Renualt, Capture 1.0 TCe Zen, NOL9272, copper, 2020]
-9907 INFO  cassdemo.backend.BackendSession: Row[Renualt, Capture 1.0 TCe Zen, NOL9272, copper, 2020]
-9913 INFO  cassdemo.backend.BackendSession: Car avail.: false
-9915 INFO  cassdemo.backend.BackendSession: Car avail.: false
-9915 INFO  cassdemo.backend.BackendSession: Car avail.: false
-9916 INFO  cassdemo.backend.BackendSession: Car avail.: true
-9917 INFO  cassdemo.backend.BackendSession: Car avail.: false
-9917 INFO  cassdemo.backend.BackendSession: Car avail.: false
-9917 INFO  cassdemo.backend.BackendSession: Car avail.: false
-9919 INFO  cassdemo.backend.BackendSession: wolne auto, zmieniam na falseNOL9273
-9919 INFO  cassdemo.backend.BackendSession: Car avail.: false
-9919 INFO  cassdemo.backend.BackendSession: Car avail.: false
-9920 INFO  cassdemo.backend.BackendSession: Car avail.: true
-9921 INFO  cassdemo.backend.BackendSession: Car avail.: true
-9922 INFO  cassdemo.backend.BackendSession: Car avail.: true
-9923 INFO  cassdemo.backend.BackendSession: Car avail.: true
-9923 INFO  cassdemo.backend.BackendSession: Row[Renualt, Capture 1.0 TCe Zen, NOL9272, copper, 2020]
-9929 INFO  cassdemo.backend.BackendSession: Car avail.: true
-9930 INFO  cassdemo.backend.BackendSession: wolne auto, zmieniam na falseNOL9274
-9932 INFO  cassdemo.backend.BackendSession: wolne auto, zmieniam na falseNOL9274
-9932 INFO  cassdemo.backend.BackendSession: Car avail.: false
-9932 INFO  cassdemo.backend.BackendSession: Car avail.: true
-9934 INFO  cassdemo.backend.BackendSession: Car avail.: false
-9934 INFO  cassdemo.backend.BackendSession: Car avail.: false
-9935 INFO  cassdemo.backend.BackendSession: Car avail.: false
-9936 INFO  cassdemo.backend.BackendSession: wolne auto, zmieniam na falseNOL9274
-9936 INFO  cassdemo.backend.BackendSession: Car avail.: false
-9937 INFO  cassdemo.backend.BackendSession: Car avail.: false
-9938 INFO  cassdemo.backend.BackendSession: wolne auto, zmieniam na falseNOL9274
-9939 INFO  cassdemo.backend.BackendSession: wolne auto, zmieniam na falseNOL9274
-9942 INFO  cassdemo.backend.BackendSession: Car avail.: true
-9943 INFO  cassdemo.backend.BackendSession: Car avail.: true
-9944 INFO  cassdemo.backend.BackendSession: wolne auto, zmieniam na falseNOL9274
-9947 INFO  cassdemo.backend.BackendSession: wolne auto, zmieniam na falseNOL9274
-9948 INFO  cassdemo.backend.BackendSession: wolne auto, zmieniam na falseNOL9275
-9948 INFO  cassdemo.backend.BackendSession: Car avail.: true
-9948 INFO  cassdemo.backend.BackendSession: Car avail.: true
-9951 INFO  cassdemo.backend.BackendSession: Car avail.: false
-9943 INFO  cassdemo.backend.BackendSession: Car avail.: true
-9957 INFO  cassdemo.backend.BackendSession: Car avail.: false
-9960 INFO  cassdemo.backend.BackendSession: wolne auto, zmieniam na falseNOL9275
-9961 INFO  cassdemo.backend.BackendSession: wolne auto, zmieniam na falseNOL9275
-9961 INFO  cassdemo.backend.BackendSession: wolne auto, zmieniam na falseNOL9275
-9962 INFO  cassdemo.backend.BackendSession: Car avail.: true
-9962 INFO  cassdemo.backend.BackendSession: wolne auto, zmieniam na falseNOL9275
-9974 INFO  cassdemo.backend.BackendSession: wolne auto, zmieniam na falseNOL9276
+582  INFO  c.d.d.c.p.DCAwareRoundRobinPolicy: Using data-center name 'datacenter1' for DCAwareRoundRobinPolicy (if this is incorrect, please provide the correct datacenter name with DCAwareRoundRobinPolicy constructor)
+584  INFO  com.datastax.driver.core.Cluster: New Cassandra host /172.20.0.3:9042 added
+584  INFO  com.datastax.driver.core.Cluster: New Cassandra host /172.20.0.4:9042 added
+584  INFO  com.datastax.driver.core.Cluster: New Cassandra host /127.0.0.1:9042 added
+694  INFO  cassdemo.backend.BackendSession: Statements prepared
+6957 INFO  cassdemo.backend.BackendSession: All cars reservation deleted

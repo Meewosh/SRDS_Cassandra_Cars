@@ -1,6 +1,7 @@
 package test;
 import cassdemo.backend.BackendException;
 import cassdemo.backend.BackendSession;
+import com.datastax.driver.core.ResultSet;
 import com.datastax.driver.core.Row;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,17 +22,53 @@ public class StressTest extends Thread {
     @Override
     public void run() {
         UUID userId = UUID.randomUUID();
-        UUID rs_id = UUID.randomUUID();
 
-        String carBrand = "Renualt";
-        String carModel = "Capture 1.0 TCe Zen";
+        String[] carTableBrand = {"Mercedes-Benz", "BMW", "Renualt", "Lamborghini", "Ford", "Volkswagen","Audi","Hyundai","Kia"};
+        String[] carTableModel = {"1050e small", "1586w big", "6947aa medium", "123", "1", "332w","Speed","Off-road","Electric"};
+        Random rand1 = new Random();
+        Random rand2 = new Random();
+        int randomNumberOfCarBrand = rand1.nextInt(9);
+        int randomNumberOfCarModel = rand2.nextInt(9);
 
-        try {
-            String rs = session.selectConcreteCarAndCheckAvailability(carBrand, carModel, userId);
-            System.out.println(rs + "\n");
-        } catch (BackendException e) {
-            e.printStackTrace();
+        ResultSet queryAll = null;
+
+        for (int i = 0; i < 20; i++) {
+            try {
+                queryAll = session.selectConcreteCarAndCheckAvailability(carTableBrand[randomNumberOfCarBrand], carTableModel[randomNumberOfCarModel], userId);
+                for (Row row : queryAll) {
+                    String registrationNumber = row.getString("registrationNumber");
+
+                    boolean carAvailability = session.isAvailable(registrationNumber);
+
+                    //logger.info("Car avail.: " + carAvailability);
+
+                    if (carAvailability) {
+                        session.updateCarAvailability(registrationNumber, userId);
+                        UUID userIDtoCheck = session.getUserIDbyCarRegistrationNumber(registrationNumber);
+//                    System.out.println(userIDtoCheck);
+//                    System.out.println(userId);
+
+
+                        if (userId.equals(userIDtoCheck)) {
+                            System.out.println("OK");
+                        } else if (userIDtoCheck == null) {
+                            System.out.println("Brak usera w bazie.");
+                        } else {
+                            System.out.println("Inny user niz wprowadzon");
+                        }
+
+                        //logger.info("wolne auto, zmieniam na false" + registrationNumber);
+                        if (i > 15)session.updateCarAvailabilityToDefault(registrationNumber);
+                        break;
+                    }
+
+
+                }
+            } catch (BackendException e) {
+                e.printStackTrace();
+            }
         }
+
 
 
 //        Random rand = new Random();
