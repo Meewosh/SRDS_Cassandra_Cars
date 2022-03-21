@@ -369,7 +369,7 @@ public class BackendSession {
 //			try {
 //				session.execute(insertIntoCarStatus);
 //			} catch (Exception e) {
-//				throw new BackendException("dupa " + e.getMessage() + ".", e);
+//				throw new BackendException(" " + e.getMessage() + ".", e);
 //			}
 //		}
 //	}
