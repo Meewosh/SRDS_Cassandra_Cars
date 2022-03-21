@@ -40,9 +40,9 @@ public class Main {
 			System.out.println("\n0 - zamkniecie programu oraz wyczyszczenie tabeli Cars_status");
 			System.out.println("1 - Auta");
 			System.out.println("2 - Stress Test");
-			System.out.println("3 - Wyczyszczenie tablei Cars_status");
+			System.out.println("3 - Wyczyszczenie tabel");
 			System.out.println("4 - Stworzenie Aut");
-			System.out.println("5 - Transfer Rejstracji do tabeli Car Status");
+//			System.out.println("5 - Transfer Rejstracji do tabeli Car Status");
 
 
 			String mode = input.next();
@@ -61,8 +61,8 @@ public class Main {
 				}
 				case "2":
 				{
-					ExecutorService executorService = Executors.newFixedThreadPool(100);
-					for (int i = 0; i < 100; i++) {
+					ExecutorService executorService = Executors.newFixedThreadPool(50);
+					for (int i = 0; i < 50; i++) {
 						executorService.execute(new Thread(new StressTest(session)));
 					}
 
@@ -77,15 +77,9 @@ public class Main {
 				}
 				case "4":
 				{
-					for (int i = 0; i < 1500; i++) session.createCar();
+					for (int i = 0; i < 5000; i++) session.createCar();
 
 					break;
-				}
-				case "5":
-				{
-					session.insertCarRegistrationToCarStatus();
-					System.out.println("Done\n");
-
 				}
 				default:
 				{
