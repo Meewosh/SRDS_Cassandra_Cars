@@ -25,12 +25,17 @@ CREATE TABLE Reservation_Cars (
   rs_id uuid,
   registrationNumber varchar,
   user_id uuid,
-  PRIMARY KEY(user_id, rs_id)
+  day varchar,
+  PRIMARY KEY(registrationNumber)
 );
 
-CREATE TABLE car_status (
+CREATE TABLE Reservation_by_user (
+  rs_id uuid,
   registrationNumber varchar,
-  status boolean,
   user_id uuid,
-  PRIMARY KEY(registrationNumber)
+  dateFrom varchar,
+  dateTo varchar,
+  brand varchar,
+  model varchar,
+  PRIMARY KEY(user_id, rs_id)
 );
