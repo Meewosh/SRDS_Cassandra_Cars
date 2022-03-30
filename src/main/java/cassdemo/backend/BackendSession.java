@@ -1,13 +1,11 @@
 package cassdemo.backend;
 
 import com.datastax.driver.core.*;
-import com.sun.org.apache.xpath.internal.operations.Quo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.sql.Timestamp;
 import java.util.Objects;
-import java.util.Queue;
 import java.util.Random;
 import java.util.UUID;
 

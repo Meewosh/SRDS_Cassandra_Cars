@@ -77,7 +77,7 @@ public class StressTest extends Thread {
                     }
 
                 }
-                Thread.sleep(300);
+                Thread.sleep(500);
 
             } catch (BackendException | InterruptedException e) {
                 e.printStackTrace();
