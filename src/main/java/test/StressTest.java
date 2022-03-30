@@ -1,11 +1,13 @@
 package test;
 import cassdemo.backend.BackendException;
 import cassdemo.backend.BackendSession;
+import ch.qos.logback.core.joran.conditional.PropertyWrapperForScripts;
 import com.datastax.driver.core.ResultSet;
 import com.datastax.driver.core.Row;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.sql.Timestamp;
 import java.util.Objects;
 import java.util.Random;
 import java.util.UUID;
@@ -40,23 +42,28 @@ public class StressTest extends Thread {
             int randomNumberOfCarModel = rand2.nextInt(9);
             try {
                 queryAll = session.
-                        selectConcreteCarAndCheckAvailability(carTableBrand[randomNumberOfCarBrand], carTableModel[randomNumberOfCarModel]);
+                        selectConcreteCarAndCheckAvailability(carTableBrand[j%9], carTableModel[j%9]);
+
                 for (Row row : queryAll) {
                     String registrationNumber = row.getString("registrationNumber");
 
                     UUID reservationId = UUID.randomUUID();
                     //update bazy danych Car Reservation
-                    if(session.updateCarReservation(registrationNumber, userId, reservationId, "2022-03-27")) {
+                    Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
-                        UUID userIdToCheck = session.getUserIDbyCarRegistrationNumber(registrationNumber);
+                    session.insertIntoCarsReservation(null, null, registrationNumber, timestamp);
+
+                    if(session.updateCarReservation(registrationNumber, userId, reservationId, timestamp)) {
+
+                        UUID userIdToCheck = session.getUserIDbyCarRegistrationNumber(registrationNumber, timestamp);
 
 
                         if (userId.equals(userIdToCheck)) {
                             session.insertIntoReservationByUser(reservationId, registrationNumber,
                                     userId, "2022-03-27", "2022-05-15", carTableBrand[randomNumberOfCarBrand], carTableModel[randomNumberOfCarModel]);
 
-                            String registrationNumberCheck = session.selectConcreteReservationByUserIdAndReservationId(userId, reservationId);
-                            if (registrationNumber.equals(registrationNumberCheck)) {
+                            ResultSet registrationNumberCheck = session.selectConcreteReservationByUserIdAndReservationId(userId, reservationId);
+                            if (registrationNumber.equals(registrationNumberCheck.one().getString("registrationNumber"))) {
                                 logger.info("Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User");
                             } else {
                                 logger.warn("Dane wprowadzone do bazy Reservation Cars, ale nie wprowadzone do  Reservation Cars by User");
@@ -64,7 +71,7 @@ public class StressTest extends Thread {
                         } else if (userIdToCheck == null) {
                             logger.warn("Odczytanie wartosci null w bazie danych");
                         } else if (userIdToCheck != userId) {
-                            logger.warn("Auto zostalo zarezerwowane dla innego uzytkowanika. User: " + userId + " User w bazie: ");
+                            logger.warn("Auto zostalo zarezerwowane dla innego uzytkowanika. User: " + userId + " User w bazie: " + userIdToCheck);
                         }
                         break;
                     }

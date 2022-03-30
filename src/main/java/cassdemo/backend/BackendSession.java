@@ -1,11 +1,13 @@
 package cassdemo.backend;
 
 import com.datastax.driver.core.*;
+import com.sun.org.apache.xpath.internal.operations.Quo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.sql.Timestamp;
 import java.util.Objects;
+import java.util.Queue;
 import java.util.Random;
 import java.util.UUID;
 
@@ -76,11 +78,11 @@ public class BackendSession {
 			SELECT_ALL_FROM_CARS = session.prepare("SELECT * FROM Cars");
 			SELECT_ALL_AVAILABLE_CARS_BY_MODEL_AND_BRAND = session.prepare("SELECT * FROM Cars WHERE model = (?) AND brand = (?)");
 			SELECT_CONCRETE_CAR_BY_REGISTRATION_NUMBER = session.prepare("SELECT * FROM cars_by_registrationnumber WHERE registrationnumber = (?)");
-			SELECT_CONCRETE_CAR_RESERVATION_BY_REGISTRATION_NUMBER = session.prepare("SELECT * FROM Reservation_Cars WHERE registrationnumber = (?)");
+			SELECT_CONCRETE_CAR_RESERVATION_BY_REGISTRATION_NUMBER = session.prepare("SELECT * FROM Reservation_Cars WHERE registrationnumber = (?) AND day = (?)");//.setConsistencyLevel(ConsistencyLevel.QUORUM);
 			SELECT_FROM_CAR_RESERVATION_BY_USER = session.prepare("SELECT * FROM Reservation_by_user WHERE user_id = (?)");
-			SELECT_FROM_CAR_RESERVATION_BY_USER_AND_RESERVATION = session.prepare("SELECT * FROM Reservation_by_user WHERE user_id = (?) and rs_id = (?)");
+			SELECT_FROM_CAR_RESERVATION_BY_USER_AND_RESERVATION = session.prepare("SELECT * FROM Reservation_by_user WHERE user_id = (?) and rs_id = (?)");//.setConsistencyLevel(ConsistencyLevel.QUORUM);
 
-			UPDATE_CAR_RESERVATION = session.prepare("UPDATE Reservation_Cars SET user_id = (?), day = (?), rs_id  = (?) WHERE registrationnumber = (?)");
+			UPDATE_CAR_RESERVATION = session.prepare("UPDATE Reservation_Cars SET user_id = (?), rs_id  = (?) WHERE registrationnumber = (?) and day = (?)");
 			DELETE_ROW_FROM_CAR_RESERVATION = session.prepare("DELETE FROM Reservation_Cars WHERE registrationNumber = (?)");
 
 			INSERT_INTO_CARS_RESERVATION_BY_USER = session.prepare("INSERT INTO Reservation_by_user(rs_id, registrationNumber, user_id, dateFrom, dateTo, brand, model) VALUES (?, ?, ?, ?, ?, ?, ?)");
@@ -154,7 +156,7 @@ public class BackendSession {
 		return rs;
 	}
 
-	public String selectConcreteReservationByUserIdAndReservationId(UUID user_id, UUID rs_id) throws BackendException {
+	public ResultSet selectConcreteReservationByUserIdAndReservationId(UUID user_id, UUID rs_id) throws BackendException {
 		BoundStatement bs = new BoundStatement(SELECT_FROM_CAR_RESERVATION_BY_USER_AND_RESERVATION);
 		bs.bind(user_id, rs_id);
 
@@ -166,7 +168,7 @@ public class BackendSession {
 			throw new BackendException("Could not perform a query. " + e.getMessage() + ".", e);
 		}
 
-		return rs.one().getString("registrationnumber");
+		return rs;
 	}
 
 
@@ -188,15 +190,15 @@ public class BackendSession {
 
 
 	//sprawdzenie dostepnosci auta w tabeli cars_status
-	public boolean isDefaultDate(String registrationNumber) throws BackendException {
+	public boolean isDefaultDate(String registrationNumber, Timestamp timestamp) throws BackendException {
 
 		BoundStatement bs = new BoundStatement(SELECT_CONCRETE_CAR_RESERVATION_BY_REGISTRATION_NUMBER);
-		bs.bind(registrationNumber);
+		bs.bind(registrationNumber, timestamp);
 		ResultSet rs = null;
 		boolean isDefault = false;
 		try {
 			rs = session.execute(bs);
-			if (Objects.equals(rs.one().getString("day"), "1900-01-01")) isDefault = true;
+			if (Objects.equals(rs.one().getTimestamp("day"), timestamp)) isDefault = true;
 		} catch (Exception e) {
 			throw new BackendException("Could not perform a query. " + e.getMessage() + ".", e);
 		}
@@ -205,10 +207,10 @@ public class BackendSession {
 	}
 
 	//sprawdzenie czy uzytkownik wprowadzony do bazy danych jest identyczny z poleceniem
-	public UUID getUserIDbyCarRegistrationNumber(String registrationNumber) throws BackendException {
+	public UUID getUserIDbyCarRegistrationNumber(String registrationNumber, Timestamp timestamp) throws BackendException {
 
 		BoundStatement bs = new BoundStatement(SELECT_CONCRETE_CAR_RESERVATION_BY_REGISTRATION_NUMBER);
-		bs.bind(registrationNumber);
+		bs.bind(registrationNumber, timestamp);
 
 		ResultSet rs = null;
 
@@ -222,12 +224,12 @@ public class BackendSession {
 	}
 
 
-	public boolean updateCarReservation(String registrationNumber, UUID userID, UUID rs_id, String day) throws BackendException {
+	public boolean updateCarReservation(String registrationNumber, UUID userID, UUID rs_id, Timestamp timestamp) throws BackendException {
 
 		BoundStatement bs = new BoundStatement(UPDATE_CAR_RESERVATION);
-		bs.bind(userID, day, rs_id, registrationNumber);
+		bs.bind(userID, rs_id, registrationNumber, timestamp);
 		try {
-			if (isDefaultDate(registrationNumber)) {
+			if (isDefaultDate(registrationNumber, timestamp)) {
 				session.execute(bs);
 				return true;
 			}
@@ -240,7 +242,7 @@ public class BackendSession {
 
 	}
 
-	public void insertIntoCarsReservation(UUID rs_id, UUID user_id, String registrationNumber, String day) throws BackendException {
+	public void insertIntoCarsReservation(UUID rs_id, UUID user_id, String registrationNumber, Timestamp day) throws BackendException {
 		BoundStatement bs = new BoundStatement(INSERT_INTO_CARS_RESERVATION);
 		bs.bind(rs_id, user_id, registrationNumber, day);
 
@@ -383,8 +385,6 @@ public class BackendSession {
 				productionYear,
 				color[randomNumberOfColor]
 				);
-
-		insertIntoCarsReservation(null, null, registrationNumber, "1900-01-01");
 
 
 		logger.info("Dodano auto: " + carTableBrand[randomNumberOfCarBrand] + " " + carTableModel[randomNumberOfCarModel] + " " + registrationNumber);

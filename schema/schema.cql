@@ -25,8 +25,8 @@ CREATE TABLE Reservation_Cars (
   rs_id uuid,
   registrationNumber varchar,
   user_id uuid,
-  day varchar,
-  PRIMARY KEY(registrationNumber)
+  day timestamp,
+  PRIMARY KEY(registrationNumber, day)
 );
 
 CREATE TABLE Reservation_by_user (
