@@ -1,0 +1,1324 @@
+34926 [pool-1-thread-1] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+34927 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+34931 [pool-1-thread-7] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+34974 [pool-1-thread-3] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+34981 [pool-1-thread-4] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+34981 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+34983 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+34983 [pool-1-thread-2] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+34988 [pool-1-thread-16] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+34991 [pool-1-thread-6] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+34997 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+34997 [pool-1-thread-17] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+34999 [pool-1-thread-11] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+35002 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35007 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35007 [pool-1-thread-27] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35011 [pool-1-thread-24] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35013 [pool-1-thread-9] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35020 [pool-1-thread-32] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35020 [pool-1-thread-25] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35021 [pool-1-thread-19] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35021 [pool-1-thread-28] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35023 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35023 [pool-1-thread-15] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35023 [pool-1-thread-35] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-30" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+Exception in thread "pool-1-thread-26" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+35035 [pool-1-thread-29] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35035 [pool-1-thread-39] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35036 [pool-1-thread-13] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35036 [pool-1-thread-21] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35037 [pool-1-thread-22] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35043 [pool-1-thread-38] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35043 [pool-1-thread-34] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35044 [pool-1-thread-23] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35053 [pool-1-thread-49] WARN  test.StressTest - Auto zostalo zarezerwowane dla innego uzytkowanika. User: 9dd757f1-5397-49a1-8c62-b31daa543658 User w bazie:  
+35055 [pool-1-thread-46] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35055 [pool-1-thread-20] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35055 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+
+0 - zamkniecie programu oraz wyczyszczenie tabeli Cars_status
+1 - Auta
+2 - Stress Test
+3 - Wyczyszczenie tabel
+4 - Stworzenie Aut
+35056 [pool-1-thread-47] WARN  test.StressTest - Auto zostalo zarezerwowane dla innego uzytkowanika. User: b749a360-20f1-446f-a1df-76a4ad89f051 User w bazie:  
+35058 [pool-1-thread-45] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35058 [pool-1-thread-40] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35063 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35063 [pool-1-thread-41] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-12" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+35087 [pool-1-thread-42] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35093 [pool-1-thread-52] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35093 [pool-1-thread-51] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35101 [pool-1-thread-50] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35104 [pool-1-thread-48] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35244 [pool-1-thread-1] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35244 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35248 [pool-1-thread-7] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35285 [pool-1-thread-3] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35318 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35341 [pool-1-thread-4] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35341 [pool-1-thread-2] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35351 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35353 [pool-1-thread-17] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35360 [pool-1-thread-16] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35371 [pool-1-thread-11] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35372 [pool-1-thread-6] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35375 [pool-1-thread-35] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35387 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35388 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35388 [pool-1-thread-25] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35397 [pool-1-thread-39] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35397 [pool-1-thread-15] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35406 [pool-1-thread-19] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35406 [pool-1-thread-38] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35409 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35409 [pool-1-thread-46] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35409 [pool-1-thread-27] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35413 [pool-1-thread-21] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35417 [pool-1-thread-28] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35417 [pool-1-thread-29] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35417 [pool-1-thread-32] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-47" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+35427 [pool-1-thread-34] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35427 [pool-1-thread-49] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35430 [pool-1-thread-9] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35430 [pool-1-thread-40] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35432 [pool-1-thread-24] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35437 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35438 [pool-1-thread-45] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35443 [pool-1-thread-13] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35443 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35446 [pool-1-thread-22] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35447 [pool-1-thread-20] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35447 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35447 [pool-1-thread-41] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35456 [pool-1-thread-52] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35458 [pool-1-thread-51] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35460 [pool-1-thread-48] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35480 [pool-1-thread-23] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35500 [pool-1-thread-50] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35513 [pool-1-thread-42] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35562 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35566 [pool-1-thread-7] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35566 [pool-1-thread-1] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35615 [pool-1-thread-3] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35641 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35655 [pool-1-thread-4] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35660 [pool-1-thread-2] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35668 [pool-1-thread-17] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35670 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35675 [pool-1-thread-16] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35680 [pool-1-thread-6] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+35684 [pool-1-thread-35] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35686 [pool-1-thread-11] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35694 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35701 [pool-1-thread-39] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+35708 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35732 [pool-1-thread-25] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35734 [pool-1-thread-19] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35745 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35746 [pool-1-thread-21] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35751 [pool-1-thread-38] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35752 [pool-1-thread-27] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+Exception in thread "pool-1-thread-15" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+35758 [pool-1-thread-29] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-28" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+35775 [pool-1-thread-46] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35783 [pool-1-thread-24] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35784 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-32" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+35788 [pool-1-thread-45] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35791 [pool-1-thread-9] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35792 [pool-1-thread-41] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35792 [pool-1-thread-49] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35793 [pool-1-thread-13] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35794 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35794 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35794 [pool-1-thread-22] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35795 [pool-1-thread-20] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35795 [pool-1-thread-48] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35796 [pool-1-thread-40] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35801 [pool-1-thread-51] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35801 [pool-1-thread-52] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35804 [pool-1-thread-23] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35815 [pool-1-thread-34] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35857 [pool-1-thread-50] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35860 [pool-1-thread-42] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35884 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35892 [pool-1-thread-1] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35910 [pool-1-thread-7] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35927 [pool-1-thread-3] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35948 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35977 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35979 [pool-1-thread-2] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35985 [pool-1-thread-17] WARN  test.StressTest - Auto zostalo zarezerwowane dla innego uzytkowanika. User: b3ffda13-f707-4b3a-b765-0d1d0b8567a1 User w bazie:  
+35992 [pool-1-thread-16] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+35993 [pool-1-thread-4] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36001 [pool-1-thread-35] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36005 [pool-1-thread-6] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36019 [pool-1-thread-39] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-11" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+36024 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36046 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36060 [pool-1-thread-19] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-25" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+Exception in thread "pool-1-thread-21" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+36114 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36116 [pool-1-thread-38] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+36117 [pool-1-thread-29] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36125 [pool-1-thread-27] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36126 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36128 [pool-1-thread-46] WARN  test.StressTest - Auto zostalo zarezerwowane dla innego uzytkowanika. User: 0af53666-bf04-4b2b-8b48-160ebc2abb95 User w bazie:  
+36130 [pool-1-thread-41] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36133 [pool-1-thread-52] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36133 [pool-1-thread-49] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36137 [pool-1-thread-20] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36137 [pool-1-thread-22] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36140 [pool-1-thread-51] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+36142 [pool-1-thread-40] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+36143 [pool-1-thread-9] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36145 [pool-1-thread-23] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36145 [pool-1-thread-13] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36146 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36147 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36148 [pool-1-thread-24] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36148 [pool-1-thread-34] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-45" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+Exception in thread "pool-1-thread-48" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+36194 [pool-1-thread-50] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36201 [pool-1-thread-42] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36246 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36260 [pool-1-thread-1] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36276 [pool-1-thread-7] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36301 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36323 [pool-1-thread-16] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36338 [pool-1-thread-6] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36345 [pool-1-thread-18] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+36347 [pool-1-thread-35] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+Exception in thread "pool-1-thread-2" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+36353 [pool-1-thread-17] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36360 [pool-1-thread-3] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36363 [pool-1-thread-39] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36369 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36373 [pool-1-thread-4] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36381 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36405 [pool-1-thread-19] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36426 [pool-1-thread-29] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36427 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36434 [pool-1-thread-38] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36441 [pool-1-thread-27] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36451 [pool-1-thread-41] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36452 [pool-1-thread-46] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36463 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36468 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36469 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36474 [pool-1-thread-23] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36477 [pool-1-thread-52] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36478 [pool-1-thread-40] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36487 [pool-1-thread-13] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36488 [pool-1-thread-20] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36489 [pool-1-thread-34] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36497 [pool-1-thread-51] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36505 [pool-1-thread-22] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36509 [pool-1-thread-49] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36513 [pool-1-thread-24] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36515 [pool-1-thread-9] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36519 [pool-1-thread-42] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36523 [pool-1-thread-50] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36557 [pool-1-thread-5] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+36581 [pool-1-thread-1] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36597 [pool-1-thread-7] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36614 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36635 [pool-1-thread-16] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36650 [pool-1-thread-6] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36653 [pool-1-thread-18] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+36663 [pool-1-thread-35] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36666 [pool-1-thread-17] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-3" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+36691 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36693 [pool-1-thread-4] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36701 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36706 [pool-1-thread-39] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36725 [pool-1-thread-19] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36744 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36745 [pool-1-thread-29] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36752 [pool-1-thread-38] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36756 [pool-1-thread-27] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36765 [pool-1-thread-46] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36776 [pool-1-thread-41] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36789 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36791 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36800 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36806 [pool-1-thread-23] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36812 [pool-1-thread-34] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36814 [pool-1-thread-51] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36814 [pool-1-thread-13] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36816 [pool-1-thread-20] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36818 [pool-1-thread-40] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36819 [pool-1-thread-22] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36826 [pool-1-thread-24] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36828 [pool-1-thread-52] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36837 [pool-1-thread-50] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36837 [pool-1-thread-49] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36843 [pool-1-thread-42] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36845 [pool-1-thread-9] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36871 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-1" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+Exception in thread "pool-1-thread-7" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+36938 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36946 [pool-1-thread-16] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+36984 [pool-1-thread-18] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+36993 [pool-1-thread-6] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37006 [pool-1-thread-17] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37011 [pool-1-thread-35] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37023 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37023 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37035 [pool-1-thread-4] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37047 [pool-1-thread-19] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37048 [pool-1-thread-39] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37058 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37063 [pool-1-thread-29] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-27" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+37067 [pool-1-thread-38] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37084 [pool-1-thread-46] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37100 [pool-1-thread-41] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+37108 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37110 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37112 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37147 [pool-1-thread-23] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37150 [pool-1-thread-52] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37150 [pool-1-thread-40] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37150 [pool-1-thread-34] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37151 [pool-1-thread-51] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37157 [pool-1-thread-22] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37161 [pool-1-thread-13] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37162 [pool-1-thread-42] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37164 [pool-1-thread-49] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37165 [pool-1-thread-9] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37174 [pool-1-thread-20] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37174 [pool-1-thread-24] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37183 [pool-1-thread-50] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37200 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37257 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37291 [pool-1-thread-16] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37296 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37298 [pool-1-thread-6] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+37317 [pool-1-thread-17] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37318 [pool-1-thread-35] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37331 [pool-1-thread-31] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+37340 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37357 [pool-1-thread-4] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37357 [pool-1-thread-39] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-19" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+37397 [pool-1-thread-38] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37398 [pool-1-thread-46] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37398 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-29" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+37428 [pool-1-thread-41] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37434 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37450 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37452 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37455 [pool-1-thread-23] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37481 [pool-1-thread-52] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37484 [pool-1-thread-40] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37497 [pool-1-thread-9] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37502 [pool-1-thread-49] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37506 [pool-1-thread-20] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37506 [pool-1-thread-51] WARN  test.StressTest - Auto zostalo zarezerwowane dla innego uzytkowanika. User: 4529483a-5e5d-4d65-a5e9-84744318d629 User w bazie:  
+37507 [pool-1-thread-42] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37521 [pool-1-thread-22] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37522 [pool-1-thread-24] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37534 [pool-1-thread-5] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+37535 [pool-1-thread-34] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37536 [pool-1-thread-13] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37539 [pool-1-thread-50] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37594 [pool-1-thread-10] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+37620 [pool-1-thread-16] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37624 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37627 [pool-1-thread-17] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37628 [pool-1-thread-35] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37628 [pool-1-thread-6] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37638 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37646 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37665 [pool-1-thread-4] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37669 [pool-1-thread-39] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37710 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37714 [pool-1-thread-38] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37714 [pool-1-thread-46] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37740 [pool-1-thread-37] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+37744 [pool-1-thread-41] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37765 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37768 [pool-1-thread-23] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37799 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37816 [pool-1-thread-52] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37817 [pool-1-thread-9] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37818 [pool-1-thread-40] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37824 [pool-1-thread-42] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37831 [pool-1-thread-20] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37832 [pool-1-thread-49] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37838 [pool-1-thread-51] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37839 [pool-1-thread-24] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37853 [pool-1-thread-22] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37859 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37862 [pool-1-thread-13] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37870 [pool-1-thread-50] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-34" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+37906 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-16" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+37938 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37941 [pool-1-thread-6] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37947 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37950 [pool-1-thread-17] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37951 [pool-1-thread-35] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37959 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+37972 [pool-1-thread-4] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38003 [pool-1-thread-39] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38023 [pool-1-thread-38] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38024 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38025 [pool-1-thread-46] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38049 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38054 [pool-1-thread-41] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38086 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38091 [pool-1-thread-23] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38115 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38127 [pool-1-thread-40] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38128 [pool-1-thread-52] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38142 [pool-1-thread-9] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38144 [pool-1-thread-49] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+38146 [pool-1-thread-24] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38160 [pool-1-thread-42] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38162 [pool-1-thread-20] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38167 [pool-1-thread-51] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38176 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38185 [pool-1-thread-13] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38193 [pool-1-thread-50] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38195 [pool-1-thread-22] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38234 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38250 [pool-1-thread-6] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+38250 [pool-1-thread-18] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+38270 [pool-1-thread-31] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+Exception in thread "pool-1-thread-35" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+38283 [pool-1-thread-8] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+Exception in thread "pool-1-thread-17" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+38347 [pool-1-thread-4] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38377 [pool-1-thread-39] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38378 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38394 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38400 [pool-1-thread-46] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38403 [pool-1-thread-41] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38407 [pool-1-thread-38] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38411 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38413 [pool-1-thread-23] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38429 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38435 [pool-1-thread-40] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-52" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+38455 [pool-1-thread-9] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38472 [pool-1-thread-49] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38477 [pool-1-thread-24] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38479 [pool-1-thread-20] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38483 [pool-1-thread-42] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38493 [pool-1-thread-51] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38493 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38508 [pool-1-thread-50] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38510 [pool-1-thread-22] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38515 [pool-1-thread-13] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38568 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38574 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38575 [pool-1-thread-6] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38579 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38592 [pool-1-thread-8] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+38661 [pool-1-thread-4] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+38685 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-39" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+38724 [pool-1-thread-38] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38724 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38739 [pool-1-thread-41] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38742 [pool-1-thread-23] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-46" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+38747 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38760 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38784 [pool-1-thread-40] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38798 [pool-1-thread-20] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-24" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+38809 [pool-1-thread-42] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-9" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+Exception in thread "pool-1-thread-49" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+38839 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-50" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+38853 [pool-1-thread-51] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38856 [pool-1-thread-22] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38866 [pool-1-thread-13] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38907 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38909 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38914 [pool-1-thread-6] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38916 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38918 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38975 [pool-1-thread-4] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+38995 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39036 [pool-1-thread-38] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39038 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39051 [pool-1-thread-23] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39053 [pool-1-thread-41] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39062 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39078 [pool-1-thread-36] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+39094 [pool-1-thread-40] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39113 [pool-1-thread-20] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39118 [pool-1-thread-42] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39146 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39160 [pool-1-thread-51] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39162 [pool-1-thread-22] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-13" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+39221 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39229 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39231 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39235 [pool-1-thread-6] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39236 [pool-1-thread-18] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+39288 [pool-1-thread-4] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39307 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39351 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39353 [pool-1-thread-38] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39360 [pool-1-thread-23] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+39373 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39373 [pool-1-thread-41] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39390 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39401 [pool-1-thread-40] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39420 [pool-1-thread-20] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39424 [pool-1-thread-42] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39452 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-51" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+39482 [pool-1-thread-22] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39527 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39543 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39546 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39546 [pool-1-thread-6] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39549 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39596 [pool-1-thread-4] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39617 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39688 [pool-1-thread-23] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39692 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39694 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39696 [pool-1-thread-41] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39705 [pool-1-thread-38] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39716 [pool-1-thread-36] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+39718 [pool-1-thread-40] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39742 [pool-1-thread-20] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39744 [pool-1-thread-42] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+39760 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39789 [pool-1-thread-22] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39834 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39861 [pool-1-thread-6] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39865 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39867 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39868 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39916 [pool-1-thread-4] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+39926 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40006 [pool-1-thread-23] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40008 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40013 [pool-1-thread-41] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40015 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40020 [pool-1-thread-38] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40027 [pool-1-thread-40] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40033 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40049 [pool-1-thread-20] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40057 [pool-1-thread-42] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40070 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40095 [pool-1-thread-22] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40140 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40178 [pool-1-thread-6] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40182 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40184 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40190 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40256 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40257 [pool-1-thread-4] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-23" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+40326 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40345 [pool-1-thread-38] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40355 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-41" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+40366 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40434 [pool-1-thread-40] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40438 [pool-1-thread-20] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40440 [pool-1-thread-42] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40457 [pool-1-thread-22] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40482 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40494 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40529 [pool-1-thread-31] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+40531 [pool-1-thread-6] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40539 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40563 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40598 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-4" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+40656 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40675 [pool-1-thread-38] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+40696 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40698 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40784 [pool-1-thread-20] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40791 [pool-1-thread-42] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40796 [pool-1-thread-40] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40808 [pool-1-thread-22] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40829 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40852 [pool-1-thread-6] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40857 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40861 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40881 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40916 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40948 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+40993 [pool-1-thread-38] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41038 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41062 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41073 [pool-1-thread-37] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+41105 [pool-1-thread-20] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41107 [pool-1-thread-40] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+41108 [pool-1-thread-42] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41122 [pool-1-thread-22] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41146 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41173 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41173 [pool-1-thread-6] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+41193 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41196 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41226 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41253 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41299 [pool-1-thread-38] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+41352 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41370 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41382 [pool-1-thread-37] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+41430 [pool-1-thread-40] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41436 [pool-1-thread-20] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41436 [pool-1-thread-42] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41443 [pool-1-thread-22] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41452 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41491 [pool-1-thread-6] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41492 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41505 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41508 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41545 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41565 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41609 [pool-1-thread-38] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41659 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41680 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41698 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41741 [pool-1-thread-40] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41749 [pool-1-thread-42] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41751 [pool-1-thread-22] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41752 [pool-1-thread-20] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41761 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-6" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+41802 [pool-1-thread-31] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+41821 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41826 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41859 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41872 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41917 [pool-1-thread-38] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41968 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+41990 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+42008 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-40" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+42075 [pool-1-thread-20] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-22" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+42102 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-42" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+42113 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+42151 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+42161 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+42187 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+42191 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-38" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+42283 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+42301 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+42316 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-20" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+42422 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+42423 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+42458 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+42477 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+42497 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+42512 [pool-1-thread-14] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+42590 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+42610 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+42634 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+42740 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+42744 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+42774 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+42783 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+42812 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+42820 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+42896 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+42919 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+42947 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43048 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43052 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43082 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43100 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43125 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43126 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43202 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43225 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43254 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43353 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43359 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43390 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43409 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43441 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43441 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43510 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43534 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43560 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43672 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43675 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43701 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43718 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43747 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43751 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43817 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43842 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43868 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43984 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+43987 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44009 [pool-1-thread-5] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+44026 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44054 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44058 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44125 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44149 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44177 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44297 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44300 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44316 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44333 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44360 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44364 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44432 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44463 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44490 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44602 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44607 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44626 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44641 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44668 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44670 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44737 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44778 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44798 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44913 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44917 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44932 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44964 [pool-1-thread-8] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44976 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+44984 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+45046 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+45091 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+45108 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+45222 [pool-1-thread-10] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+45227 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+45239 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-8" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+45285 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+45293 [pool-1-thread-14] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+45358 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+45403 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+45417 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+45536 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+45545 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+45550 [pool-1-thread-5] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+45595 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+45603 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+45675 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+45717 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+45734 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+45859 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+45860 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+45861 [pool-1-thread-10] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+45912 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+45914 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+45983 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+46028 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+46040 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+46168 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+46178 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-10" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+46224 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+46229 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+46293 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+46336 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+46347 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+46476 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+46489 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+46529 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+46535 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+46599 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+46643 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+46655 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+46784 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+46798 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+46838 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+46847 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+46906 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+46952 [pool-1-thread-36] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+46965 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+47106 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+47119 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+47147 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+47154 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+47211 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-36" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+47279 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+47417 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+47426 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+47454 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+47463 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+47517 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+47587 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+47734 [pool-1-thread-5] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+47741 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+47762 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+47770 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+47823 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+47896 [pool-1-thread-37] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+48039 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+48051 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+48069 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+48077 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+48135 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+48203 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+48350 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+48361 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+48376 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+48390 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+48444 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+48511 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+48661 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+48683 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+48687 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+48706 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+48751 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+48820 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+48976 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+48998 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+49005 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+49012 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+49058 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+49126 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+49282 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+49304 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+49313 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+49331 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+49371 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+49436 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+49588 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+49660 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+49660 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+49663 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+49676 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+49746 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+49895 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+49980 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+49983 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+49984 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+49985 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+50058 [pool-1-thread-37] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+50201 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+50310 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+50315 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+50319 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+50321 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-37" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+50512 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+50619 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+50639 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+50644 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+50647 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+50822 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+50923 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+50946 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+50953 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+50956 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+51129 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+51229 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+51254 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+51264 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+51266 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+51443 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+51539 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+51565 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+51572 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+51574 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+51753 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+51858 [pool-1-thread-18] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+51875 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+51888 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+51891 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+52060 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+52167 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+52183 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+52196 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+52198 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+52370 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+52473 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+52492 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+52519 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+52525 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+52677 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+52786 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+52798 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+52828 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+52832 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+52985 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+53092 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+53104 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+53138 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+53140 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+53293 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+53402 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+53414 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+53445 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+53446 [pool-1-thread-33] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+53600 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+53710 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+53721 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+53753 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+53754 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+53916 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+54018 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+54028 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+54061 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+54062 [pool-1-thread-33] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+54226 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+54329 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+54333 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+Exception in thread "pool-1-thread-33" java.lang.NullPointerException: Cannot invoke "com.datastax.driver.core.Row.getString(String)" because the return value of "com.datastax.driver.core.ResultSet.one()" is null
+        at cassdemo.backend.BackendSession.selectConcreteReservationByUserIdAndReservationId(BackendSession.java:169)
+        at test.StressTest.run(StressTest.java:58)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+        at java.base/java.lang.Thread.run(Thread.java:831)
+54376 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+54540 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+54647 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+54656 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+54690 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+54848 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+54975 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+54977 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+55008 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+55162 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+55284 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+55291 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+55319 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+55475 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+55592 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+55600 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+55627 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+55786 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+55910 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+55913 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+55937 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+56098 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+56223 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+56223 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+56245 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+56405 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+56529 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+56531 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+56555 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+56712 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+56841 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+56842 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+56868 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+57022 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+57151 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+57154 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+57175 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+57336 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+57459 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+57461 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+57483 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+57643 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+57771 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+57775 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+57796 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+57958 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+58086 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+58105 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+58108 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+58267 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+58396 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+58414 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+58418 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+58582 [pool-1-thread-5] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+58703 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+58729 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+58738 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+58891 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+59009 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+59038 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+59044 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+59199 [pool-1-thread-5] WARN  test.StressTest - Odczytanie wartosci null w bazie danych 
+59316 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+59345 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+59359 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+59507 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+59647 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+59673 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+59679 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+59832 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+59955 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+59985 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+59987 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+60142 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+60277 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+60308 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+60310 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+60449 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+60593 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+60621 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+60626 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+60777 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+60898 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+60934 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+60939 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+61085 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+61210 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+61258 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+61265 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+61392 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+61519 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+61570 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+61572 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+61703 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+61825 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+61886 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+61889 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+62010 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+62141 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+62197 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+62200 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+62318 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+62453 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+62508 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+62509 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+62623 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+62762 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+62817 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+62817 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+62933 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+63070 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+63125 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+63128 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+63241 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+63386 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+63436 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+63442 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+63552 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+63700 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+63750 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+63773 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+63873 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+64012 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+64061 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+64085 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+64186 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+64327 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+64370 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+64393 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+64494 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+64637 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+64685 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+64702 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+64811 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+64947 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+64992 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+65011 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+65118 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+65258 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+65300 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+65317 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+65430 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+65565 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+65608 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+65625 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+65752 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+65872 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+65917 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+65934 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+66059 [pool-1-thread-5] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+66201 [pool-1-thread-18] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+66224 [pool-1-thread-14] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+66244 [pool-1-thread-31] INFO  test.StressTest - Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User 
+66360 [pool-1-thread-5] INFO  test.StressTest - Koniec 
+66501 [pool-1-thread-18] INFO  test.StressTest - Koniec 
+66524 [pool-1-thread-14] INFO  test.StressTest - Koniec 
+66544 [pool-1-thread-31] INFO  test.StressTest - Koniec 
