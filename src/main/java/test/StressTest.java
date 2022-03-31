@@ -1,14 +1,16 @@
 package test;
+
 import cassdemo.backend.BackendException;
 import cassdemo.backend.BackendSession;
-import ch.qos.logback.core.joran.conditional.PropertyWrapperForScripts;
 import com.datastax.driver.core.ResultSet;
 import com.datastax.driver.core.Row;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.sql.Timestamp;
-import java.util.Objects;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
@@ -19,71 +21,129 @@ public class StressTest extends Thread {
     public StressTest(BackendSession session) {
         this.session = session;
     }
+
     public static final Logger logger = LoggerFactory.getLogger(StressTest.class);
 
     @Override
     public void run() {
         UUID userId = UUID.randomUUID();
 
-        String[] carTableBrand = {"Mercedes-Benz", "BMW", "Renualt", "Lamborghini", "Ford", "Volkswagen","Audi","Hyundai","Kia"};
-        String[] carTableModel = {"1050e small", "1586w big", "6947aa medium", "123", "1", "332w","Speed","Off-road","Electric"};
-        Random rand1 = new Random();
-        Random rand2 = new Random();
+        List<String> listOfCarBrands = createListOfCarBrands();
+        List<String> listOfCarModels = createListOfCarModels();
 
+        ResultSet queryAllCarsWithPickedBrandAndModel = null;
 
-        ResultSet queryAll = null;
-        ResultSet carReservationForConcreteUser = null;
 
         // Stress test ma nacelu pokazac, ze przy odczycie z bazy danych zaraz po zapisie istenieje szansa odczytamy pusta wartosc
         // przy Consistency level ONE
 
-        for (int j = 0; j < 100; j++) {
-            int randomNumberOfCarBrand = rand1.nextInt(9);
-            int randomNumberOfCarModel = rand2.nextInt(9);
+        for (int j = 0; j < 1000; j++) {
+
+            String randomCarBrand = randomizeCar(listOfCarBrands);
+            String randomCarModel = randomizeCar(listOfCarModels);
+
             try {
-                queryAll = session.
-                        selectConcreteCarAndCheckAvailability(carTableBrand[j%9], carTableModel[j%9]);
+                queryAllCarsWithPickedBrandAndModel = session.selectConcreteCar(randomCarBrand, randomCarModel);
 
-                for (Row row : queryAll) {
-                    String registrationNumber = row.getString("registrationNumber");
+                Row randomRow = getRandomRowFromResultSet(queryAllCarsWithPickedBrandAndModel);
 
+                String registrationNumber = randomRow.getString("registrationNumber");
+
+                String randomDate = generateRandomDate();
+
+                boolean isCarAvailable = checkCarAvailability(registrationNumber, randomDate);
+
+                if (isCarAvailable) {
                     UUID reservationId = UUID.randomUUID();
-                    //update bazy danych Car Reservation
-                    Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+                    createNewReservationForCar(reservationId, userId, registrationNumber, randomDate);
+                    boolean isCarCorrectlyReserved = checkCarReservation(reservationId, userId, registrationNumber, randomDate);
 
-                    session.insertIntoCarsReservation(null, null, registrationNumber, timestamp);
-
-                    if(session.updateCarReservation(registrationNumber, userId, reservationId, timestamp)) {
-
-                        UUID userIdToCheck = session.getUserIDbyCarRegistrationNumber(registrationNumber, timestamp);
-
-
-                        if (userId.equals(userIdToCheck)) {
-                            session.insertIntoReservationByUser(reservationId, registrationNumber,
-                                    userId, "2022-03-27", "2022-05-15", carTableBrand[randomNumberOfCarBrand], carTableModel[randomNumberOfCarModel]);
-
-                            ResultSet registrationNumberCheck = session.selectConcreteReservationByUserIdAndReservationId(userId, reservationId);
-                            if (registrationNumber.equals(registrationNumberCheck.one().getString("registrationNumber"))) {
-                                logger.info("Dane wprowadzone do bazy Reservation Cars oraz Reservation Cars by User");
-                            } else {
-                                logger.warn("Dane wprowadzone do bazy Reservation Cars, ale nie wprowadzone do  Reservation Cars by User");
-                            }
-                        } else if (userIdToCheck == null) {
-                            logger.warn("Odczytanie wartosci null w bazie danych");
-                        } else if (userIdToCheck != userId) {
-                            logger.warn("Auto zostalo zarezerwowane dla innego uzytkowanika. User: " + userId + " User w bazie: " + userIdToCheck);
-                        }
-                        break;
+                    if (isCarCorrectlyReserved) {
+                        logger.info("Car sucessfully added to reservation_cars");
+                        createNewReservationForUser(reservationId, userId, registrationNumber, randomDate, randomCarBrand, randomCarModel);
                     }
-
+                } else {
+                    logger.info("Car is not available");
                 }
-                Thread.sleep(500);
 
-            } catch (BackendException | InterruptedException e) {
+            } catch (BackendException e) {
                 e.printStackTrace();
             }
         }
         logger.info("Koniec");
 
+    }
+
+    private void createNewReservationForUser(UUID reservationId, UUID userId, String registrationNumber, String randomDate, String randomCarBrand, String randomCarModel) throws BackendException {
+        session.insertIntoReservationByUser(reservationId, registrationNumber, userId, randomDate, randomCarBrand, randomCarModel);
+    }
+
+    private boolean checkCarReservation(UUID reservationId, UUID userId, String registrationNumber, String randomDate) throws BackendException {
+        return session.getSpecificCarReservation(registrationNumber, randomDate, reservationId, userId);
+    }
+
+
+    private void createNewReservationForCar(UUID reservationId, UUID userId, String registrationNumber, String randomDate) throws BackendException {
+        session.insertIntoCarsReservation(reservationId, userId, registrationNumber, randomDate);
+    }
+
+    private boolean checkCarAvailability(String registrationNumber, String randomDate) throws BackendException {
+        return !session.isCarReservedForDate(registrationNumber, randomDate);
+    }
+
+    private String generateRandomDate() {
+        Random random = new Random();
+        int minDay = (int) LocalDate.of(2022, 1, 1).toEpochDay();
+        int maxDay = (int) LocalDate.of(2022, 6, 30).toEpochDay();
+        long randomDay = minDay + random.nextInt(maxDay - minDay);
+        LocalDate randomDate = LocalDate.ofEpochDay(randomDay);
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        return randomDate.format(formatter);
+    }
+
+    private Row getRandomRowFromResultSet(ResultSet queryAllCarsWithPickedBrandAndModel) {
+        List<Row> allRowsList = queryAllCarsWithPickedBrandAndModel.all();
+        int randomIndex = new Random().nextInt(allRowsList.size());
+        return allRowsList.get(randomIndex);
+    }
+
+    private String randomizeCar(List<String> listOfCars) {
+        int randomIndex = new Random().nextInt(listOfCars.size());
+        return listOfCars.get(randomIndex);
+    }
+
+    private List<String> createListOfCarBrands() {
+
+        List<String> listOfCarBrands = new ArrayList<>();
+
+        listOfCarBrands.add("Mercedes-Benz");
+        listOfCarBrands.add("BMW");
+        listOfCarBrands.add("Renualt");
+        listOfCarBrands.add("Lamborghini");
+        listOfCarBrands.add("Ford");
+        listOfCarBrands.add("Volkswagen");
+        listOfCarBrands.add("Audi");
+        listOfCarBrands.add("Hyundai");
+        listOfCarBrands.add("Kia");
+
+        return listOfCarBrands;
+    }
+
+    private List<String> createListOfCarModels() {
+
+        List<String> listOfCarModels = new ArrayList<>();
+
+        listOfCarModels.add("1050e small");
+        listOfCarModels.add("1586w big");
+        listOfCarModels.add("6947aa medium");
+        listOfCarModels.add("123");
+        listOfCarModels.add("1");
+        listOfCarModels.add("332w");
+        listOfCarModels.add("Speed");
+        listOfCarModels.add("Off-road");
+        listOfCarModels.add("Electric");
+
+        return listOfCarModels;
     }
 }

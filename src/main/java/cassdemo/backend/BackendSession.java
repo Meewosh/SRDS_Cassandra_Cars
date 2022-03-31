@@ -4,17 +4,17 @@ import com.datastax.driver.core.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.sql.Timestamp;
+import java.util.List;
 import java.util.Objects;
 import java.util.Random;
 import java.util.UUID;
 
 /*
- * For error handling done right see: 
+ * For error handling done right see:
  * https://www.datastax.com/dev/blog/cassandra-error-handling-done-right
- * 
- * Performing stress tests often results in numerous WriteTimeoutExceptions, 
- * ReadTimeoutExceptions (thrown by Cassandra replicas) and 
+ *
+ * Performing stress tests often results in numerous WriteTimeoutExceptions,
+ * ReadTimeoutExceptions (thrown by Cassandra replicas) and
  * OpetationTimedOutExceptions (thrown by the client). Remember to retry
  * failed operations until success (it can be done through the RetryPolicy mechanism:
  * https://stackoverflow.com/questions/30329956/cassandra-datastax-driver-retry-policy )
@@ -37,13 +37,10 @@ public class BackendSession {
 		prepareStatements();
 	}
 
-	//private static PreparedStatement DELETE_ALL_FROM_CARS_RESERVATION;
 	private static PreparedStatement DELETE_ALL_FROM_CARS;
 	private static PreparedStatement DELETE_ALL_FROM_CARS_BY_REGISTRATION_NUMBER;
 	private static PreparedStatement DELETE_ALL_FROM_RESERVATION_CARS;
 	private static PreparedStatement DELETE_ALL_FROM_RESERVATION_CARS_BY_USERS;
-
-
 
 	private static PreparedStatement SELECT_ALL_FROM_CARS;
 
@@ -51,10 +48,9 @@ public class BackendSession {
 	private static PreparedStatement INSERT_INTO_CARS_REGISTRATION_NUMBER;
 	private static PreparedStatement INSERT_INTO_CARS_STATUS_INIT;
 
-	private static PreparedStatement SELECT_ALL_AVAILABLE_CARS_BY_MODEL_AND_BRAND;
+	private static PreparedStatement SELECT_ALL_CARS_BY_MODEL_AND_BRAND;
 	private static PreparedStatement SELECT_CONCRETE_CAR_RESERVATION_BY_REGISTRATION_NUMBER;
 	private static PreparedStatement UPDATE_CAR_RESERVATION;
-	private static PreparedStatement SELECT_CARS_BY_REGISTRATION_NUMBER;
 	private static PreparedStatement SELECT_CONCRETE_CAR_BY_REGISTRATION_NUMBER;
 	private static PreparedStatement INSERT_INTO_CARS_RESERVATION;
 	private static PreparedStatement DELETE_ROW_FROM_CAR_RESERVATION;
@@ -62,30 +58,29 @@ public class BackendSession {
 	private static PreparedStatement SELECT_FROM_CAR_RESERVATION_BY_USER_AND_RESERVATION;
 	private static PreparedStatement INSERT_INTO_CARS_RESERVATION_BY_USER;
 
-
 	private static final String CARS_FORMAT = "- %-10s  %-30s %-15s %-10s %-10s\n";
+
+	private int counter;
 
 	private void prepareStatements() throws BackendException {
 		try {
-			//DELETE_ALL_FROM_CARS_RESERVATION = session.prepare("TRUNCATE car_status;");
+
 			DELETE_ALL_FROM_CARS = session.prepare("TRUNCATE cars;");
-			DELETE_ALL_FROM_CARS_BY_REGISTRATION_NUMBER= session.prepare("TRUNCATE cars_by_registrationnumber;");
+			DELETE_ALL_FROM_CARS_BY_REGISTRATION_NUMBER = session.prepare("TRUNCATE cars_by_registrationnumber;");
 			DELETE_ALL_FROM_RESERVATION_CARS = session.prepare("TRUNCATE Reservation_Cars;");
 			DELETE_ALL_FROM_RESERVATION_CARS_BY_USERS = session.prepare("TRUNCATE reservation_by_user;");
 
 			SELECT_ALL_FROM_CARS = session.prepare("SELECT * FROM Cars");
-			SELECT_ALL_AVAILABLE_CARS_BY_MODEL_AND_BRAND = session.prepare("SELECT * FROM Cars WHERE model = (?) AND brand = (?)");
+			SELECT_ALL_CARS_BY_MODEL_AND_BRAND = session.prepare("SELECT * FROM Cars WHERE model = (?) AND brand = (?)");
 			SELECT_CONCRETE_CAR_BY_REGISTRATION_NUMBER = session.prepare("SELECT * FROM cars_by_registrationnumber WHERE registrationnumber = (?)");
-			SELECT_CONCRETE_CAR_RESERVATION_BY_REGISTRATION_NUMBER = session.prepare("SELECT * FROM Reservation_Cars WHERE registrationnumber = (?) AND day = (?)");//.setConsistencyLevel(ConsistencyLevel.QUORUM);
+			SELECT_CONCRETE_CAR_RESERVATION_BY_REGISTRATION_NUMBER = session.prepare("SELECT * FROM Reservation_Cars WHERE registrationnumber = (?) AND day = (?)");
 			SELECT_FROM_CAR_RESERVATION_BY_USER = session.prepare("SELECT * FROM Reservation_by_user WHERE user_id = (?)");
-			SELECT_FROM_CAR_RESERVATION_BY_USER_AND_RESERVATION = session.prepare("SELECT * FROM Reservation_by_user WHERE user_id = (?) and rs_id = (?)");//.setConsistencyLevel(ConsistencyLevel.QUORUM);
-
+			SELECT_FROM_CAR_RESERVATION_BY_USER_AND_RESERVATION = session.prepare("SELECT * FROM Reservation_by_user WHERE user_id = (?) and rs_id = (?)");
 			UPDATE_CAR_RESERVATION = session.prepare("UPDATE Reservation_Cars SET user_id = (?), rs_id  = (?) WHERE registrationnumber = (?) and day = (?)");
 			DELETE_ROW_FROM_CAR_RESERVATION = session.prepare("DELETE FROM Reservation_Cars WHERE registrationNumber = (?)");
 
-			INSERT_INTO_CARS_RESERVATION_BY_USER = session.prepare("INSERT INTO Reservation_by_user(rs_id, registrationNumber, user_id, dateFrom, dateTo, brand, model) VALUES (?, ?, ?, ?, ?, ?, ?)");
+			INSERT_INTO_CARS_RESERVATION_BY_USER = session.prepare("INSERT INTO Reservation_by_user(rs_id, registrationNumber, user_id, date, brand, model) VALUES (?, ?, ?, ?, ?, ?)");
 			INSERT_INTO_CARS_RESERVATION = session.prepare("INSERT INTO Reservation_Cars(rs_id, user_id, registrationNumber, day) VALUES (?, ?, ?, ?)");
-//			INSERT_INTO_CARS_STATUS_INIT = session.prepare("INSERT INTO car_status(registrationNumber, status, user_id) VALUES(?, ?, ?)");
 			INSERT_INTO_CARS = session.prepare("INSERT INTO Cars(registrationNumber, model, brand, productionYear, color) VALUES(?, ?, ?, ?, ?)");
 			INSERT_INTO_CARS_REGISTRATION_NUMBER = session.prepare("INSERT INTO cars_by_registrationnumber(registrationNumber, model, brand, productionYear, color) VALUES(?, ?, ?, ?, ?)");
 
@@ -116,21 +111,22 @@ public class BackendSession {
 			String productionYear = row.getString("productionYear");
 			String color = row.getString("color");
 
-			builder.append(String.format(CARS_FORMAT, registrationNumber, model, brand, productionYear,color));
+			builder.append(String.format(CARS_FORMAT, registrationNumber, model, brand, productionYear, color));
 		}
 
 		return builder.toString();
 	}
 
-	public ResultSet selectConcreteCarAndCheckAvailability(String carBrand, String carModel) throws BackendException {
+	public ResultSet selectConcreteCar(String carBrand, String carModel) throws BackendException {
 		StringBuilder builder = new StringBuilder();
-		BoundStatement bs = new BoundStatement(SELECT_ALL_AVAILABLE_CARS_BY_MODEL_AND_BRAND);
+		BoundStatement bs = new BoundStatement(SELECT_ALL_CARS_BY_MODEL_AND_BRAND);
 		bs.bind(carModel, carBrand);
 
 		ResultSet rs = null;
 
 		try {
 			rs = session.execute(bs);
+			counter += 1;
 		} catch (Exception e) {
 			throw new BackendException("Could not perform a query. " + e.getMessage() + ".", e);
 		}
@@ -187,51 +183,65 @@ public class BackendSession {
 	}
 
 
-	//sprawdzenie dostepnosci auta w tabeli cars_status
-	public boolean isDefaultDate(String registrationNumber, Timestamp timestamp) throws BackendException {
+	public boolean isCarReservedForDate(String registrationNumber, String date) throws BackendException {
 
 		BoundStatement bs = new BoundStatement(SELECT_CONCRETE_CAR_RESERVATION_BY_REGISTRATION_NUMBER);
-		bs.bind(registrationNumber, timestamp);
+		bs.bind(registrationNumber, date);
 		ResultSet rs = null;
-		boolean isDefault = false;
+		boolean isReserved = false;
 		try {
 			rs = session.execute(bs);
-			if (Objects.equals(rs.one().getTimestamp("day"), timestamp)) isDefault = true;
+			counter += 1;
+			if (rs.one() != null) {
+				return true;
+			} else {
+				return false;
+			}
 		} catch (Exception e) {
 			throw new BackendException("Could not perform a query. " + e.getMessage() + ".", e);
 		}
-
-		return isDefault;
 	}
 
 	//sprawdzenie czy uzytkownik wprowadzony do bazy danych jest identyczny z poleceniem
-	public UUID getUserIDbyCarRegistrationNumber(String registrationNumber, Timestamp timestamp) throws BackendException {
+	public boolean getSpecificCarReservation(String registrationNumber, String date, UUID reservationId, UUID userId) throws BackendException {
 
 		BoundStatement bs = new BoundStatement(SELECT_CONCRETE_CAR_RESERVATION_BY_REGISTRATION_NUMBER);
-		bs.bind(registrationNumber, timestamp);
+		bs.bind(registrationNumber, date);
 
 		ResultSet rs = null;
-
 		try {
 			rs = session.execute(bs);
+			counter += 1;
+			List<Row> allRows = rs.all();
+			if (allRows.size() > 0) {
+				Row row = allRows.get(rs.all().size());
+				if ((row.getUUID("rs_id").compareTo(reservationId) == 0) && (row.getUUID("user_id").compareTo(userId) == 0)){
+					return true;
+				} else {
+					logger.warn("UserID in DB: " + row.getUUID("user_id") + "User expected: " + userId +
+							"ReservationID in DB: " + row.getUUID("rs_id") + "ReservationID expected: "+ reservationId);
+					return false;
+				}
+			} else {
+				logger.warn("Null in DB");
+				return false;
+			}
+
 		} catch (Exception e) {
 			throw new BackendException("Could not perform a query. " + e.getMessage() + ".", e);
 		}
-
-		return rs.one().getUUID("user_id");
 	}
 
 
-	public boolean updateCarReservation(String registrationNumber, UUID userID, UUID rs_id, Timestamp timestamp) throws BackendException {
+	public boolean updateCarReservation(String registrationNumber, UUID userID, UUID rs_id, String date) throws BackendException {
 
 		BoundStatement bs = new BoundStatement(UPDATE_CAR_RESERVATION);
-		bs.bind(userID, rs_id, registrationNumber, timestamp);
+		bs.bind(userID, rs_id, registrationNumber, date);
 		try {
-			if (isDefaultDate(registrationNumber, timestamp)) {
+			if (isCarReservedForDate(registrationNumber, date)) {
 				session.execute(bs);
 				return true;
-			}
-			else {
+			} else {
 				return false;
 			}
 		} catch (Exception e) {
@@ -240,12 +250,13 @@ public class BackendSession {
 
 	}
 
-	public void insertIntoCarsReservation(UUID rs_id, UUID user_id, String registrationNumber, Timestamp day) throws BackendException {
+	public void insertIntoCarsReservation(UUID rs_id, UUID user_id, String registrationNumber, String date) throws BackendException {
 		BoundStatement bs = new BoundStatement(INSERT_INTO_CARS_RESERVATION);
-		bs.bind(rs_id, user_id, registrationNumber, day);
+		bs.bind(rs_id, user_id, registrationNumber, date);
 
 		try {
 			session.execute(bs);
+			counter += 1;
 		} catch (Exception e) {
 			throw new BackendException("Could not perform a query. " + e.getMessage() + ".", e);
 		}
@@ -253,12 +264,13 @@ public class BackendSession {
 	}
 
 
-	public void insertIntoReservationByUser(UUID rs_id, String registrationNumber, UUID user_id,  String dateFrom, String dateTo, String brand, String model) throws BackendException {
+	public void insertIntoReservationByUser(UUID rs_id, String registrationNumber, UUID user_id, String date, String brand, String model) throws BackendException {
 		BoundStatement bs = new BoundStatement(INSERT_INTO_CARS_RESERVATION_BY_USER);
-		bs.bind(rs_id, registrationNumber, user_id, dateFrom, dateTo, brand, model);
-		
+		bs.bind(rs_id, registrationNumber, user_id, date, brand, model);
+
 		try {
 			session.execute(bs);
+			counter += 1;
 		} catch (Exception e) {
 			throw new BackendException("Could not perform a query. " + e.getMessage() + ".", e);
 		}
@@ -301,94 +313,106 @@ public class BackendSession {
 		logger.info("All cars reservation deleted");
 	}
 
-	public void deleteRowFromCarReservation(UUID user_id, UUID rs_id) throws BackendException {
-		BoundStatement bs = new BoundStatement(DELETE_ROW_FROM_CAR_RESERVATION);
-		bs.bind(user_id, rs_id);
-
-		try {
-			session.execute(bs);
-			logger.info("usunieto wpis z rs_id: " + rs_id + " oraz user_id: " + user_id);
-		} catch (Exception e) {
-			throw new BackendException("Could not perform a delete operation. " + e.getMessage() + ".", e);
-		}
-	}
-
-
-	//wprowadzenie rekordow do bazy cars_status
-	public void insertCarRegistrationToCarStatus(String registrationNumber) throws BackendException {
-
-		BoundStatement insertIntoCarStatus = new BoundStatement(INSERT_INTO_CARS_STATUS_INIT);
-		insertIntoCarStatus.bind(registrationNumber, true, null);
-		ResultSet rs = null;
-
-		try {
-			rs = session.execute(insertIntoCarStatus);
-		} catch (Exception e) {
-			throw new BackendException("Could not perform a query. " + e.getMessage() + ".", e);
-		}
-
-	}
-
-	//generacja numerow rejstracyjnych
-	public String registrationNumberGeneration() throws BackendException {
-		String registrationNumber;
-		Random rnd = new Random();
+//    public void deleteRowFromCarReservation(UUID user_id, UUID rs_id) throws BackendException {
+//        BoundStatement bs = new BoundStatement(DELETE_ROW_FROM_CAR_RESERVATION);
+//        bs.bind(user_id, rs_id);
+//
+//        try {
+//            session.execute(bs);
+//            logger.info("usunieto wpis z rs_id: " + rs_id + " oraz user_id: " + user_id);
+//        } catch (Exception e) {
+//            throw new BackendException("Could not perform a delete operation. " + e.getMessage() + ".", e);
+//        }
+//    }
 
 
-		while(true){
-			String c = String.valueOf((char) ('A' + rnd.nextInt(26)));
-			String c1 = String.valueOf((char) ('A' + rnd.nextInt(26)));
-			String c2 = String.valueOf((char) ('A' + rnd.nextInt(26)));
-			String number = String.valueOf(rnd.nextInt(10));
-			String number1 = String.valueOf(rnd.nextInt(10));
-			String number2 = String.valueOf(rnd.nextInt(10));
-			String number3 = String.valueOf(rnd.nextInt(10));
+//    //wprowadzenie rekordow do bazy cars_status
+//    public void insertCarRegistrationToCarStatus(String registrationNumber) throws BackendException {
+//
+//        BoundStatement insertIntoCarStatus = new BoundStatement(INSERT_INTO_CARS_STATUS_INIT);
+//        insertIntoCarStatus.bind(registrationNumber, true, null);
+//        ResultSet rs = null;
+//
+//        try {
+//            rs = session.execute(insertIntoCarStatus);
+//        } catch (Exception e) {
+//            throw new BackendException("Could not perform a query. " + e.getMessage() + ".", e);
+//        }
+//
+//    }
 
-			registrationNumber = c + c1 + c2 + number + number1 + number2 + number3;
-			//List<Row> car = selectCars(registrationNumber);
-
-
-			if (carRegistrationNumber(registrationNumber)){
-				return registrationNumber;
-			}
-			logger.info("W bazie danych znaleziono takie samo auto");
-		}
-
-	}
+//    //generacja numerow rejstracyjnych
+//    public String registrationNumberGeneration() throws BackendException {
+//        String registrationNumber;
+//        Random rnd = new Random();
+//
+//
+//        while (true) {
+//
+//            //List<Row> car = selectCars(registrationNumber);
+//
+//
+//            if (carRegistrationNumber(registrationNumber)) {
+//                return registrationNumber;
+//            }
+//            logger.info("W bazie danych znaleziono takie samo auto");
+//        }
+//
+//    }
 
 
 	//stworzenie nowego auta
-	public void createCar() throws BackendException {
-		String[] carTableBrand = {"Mercedes-Benz", "BMW", "Renualt", "Lamborghini", "Ford", "Volkswagen","Audi","Hyundai","Kia"};
-		String[] carTableModel = {"1050e small", "1586w big", "6947aa medium", "123", "1", "332w","Speed","Off-road","Electric"};
-		String[] color = {"black", "red", "white", "grey", "yellow", "blue"};
-        Random rand1 = new Random();
-		Random rand2 = new Random();
-		Random rand3 = new Random();
-		Random rand4 = new Random();
+	public void createCar(int amountOfCars) throws BackendException {
+		for (int i = 0; i < amountOfCars; i++) {
+			String[] carTableBrand = {"Mercedes-Benz", "BMW", "Renualt", "Lamborghini", "Ford", "Volkswagen", "Audi", "Hyundai", "Kia"};
+			String[] carTableModel = {"1050e small", "1586w big", "6947aa medium", "123", "1", "332w", "Speed", "Off-road", "Electric"};
+			String[] color = {"black", "red", "white", "grey", "yellow", "blue"};
+			Random rand = new Random();
 
-		int randomNumberOfCarBrand = rand1.nextInt(9);
-		int randomNumberOfCarModel = rand2.nextInt(9);
+			int randomNumberOfCarBrand = rand.nextInt(9);
+			int randomNumberOfCarModel = rand.nextInt(9);
 
-		String registrationNumber = registrationNumberGeneration();
+			String c = String.valueOf((char) ('A'));
+			String registrationNumber = null;
 
-		int low = 2000;
-		int high = 2022;
-		String productionYear = String.valueOf(rand3.nextInt(high-low) + low);
-		int randomNumberOfColor = rand4.nextInt(6);
+			if (i < 10){
+				registrationNumber = c + 0 + 0 + 0 + 0 + i;
+			} else if(i < 100) {
+				registrationNumber = c + 0 + 0 + 0 + i;
+			} else if( i < 1000) {
+				registrationNumber = c + 0 + 0 + i;
+			} else if( i < 10000) {
+				registrationNumber = c + 0 + i;
+			} else if( i < 100000) {
+				registrationNumber = c + i;
+			}
 
-		upsertCar(registrationNumber,
-				carTableModel[randomNumberOfCarModel],
-				carTableBrand[randomNumberOfCarBrand],
-				productionYear,
-				color[randomNumberOfColor]
-				);
+			int low = 2000;
+			int high = 2022;
+			String productionYear = String.valueOf(rand.nextInt(high - low) + low);
+			int randomNumberOfColor = rand.nextInt(6);
+
+			upsertCar(registrationNumber,
+					carTableModel[randomNumberOfCarModel],
+					carTableBrand[randomNumberOfCarBrand],
+					productionYear,
+					color[randomNumberOfColor]
+			);
 
 
-		logger.info("Dodano auto: " + carTableBrand[randomNumberOfCarBrand] + " " + carTableModel[randomNumberOfCarModel] + " " + registrationNumber);
-
+			logger.info("Dodano auto: " + carTableBrand[randomNumberOfCarBrand] + " " + carTableModel[randomNumberOfCarModel] + " " + registrationNumber);
+		}
 //		insertCarRegistrationToCarStatus(registrationNumber);
 	}
+
+	public void showCounter(){
+		System.out.println(counter);
+	}
+
+	public void setCounterToDefault(){
+		counter = 0;
+	}
+
 
 	protected void finalize() {
 		try {
@@ -399,7 +423,6 @@ public class BackendSession {
 			logger.error("Could not close existing cluster", e);
 		}
 	}
-
 
 
 }

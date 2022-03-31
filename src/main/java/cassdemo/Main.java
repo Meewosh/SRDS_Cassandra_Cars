@@ -42,6 +42,8 @@ public class Main {
 			System.out.println("2 - Stress Test");
 			System.out.println("3 - Wyczyszczenie tabel");
 			System.out.println("4 - Stworzenie Aut");
+			System.out.println("5 - Ilosc wykonanych operacji na bazie danych");
+
 //			System.out.println("5 - Transfer Rejstracji do tabeli Car Status");
 
 
@@ -57,16 +59,15 @@ public class Main {
 				{
 					String output = session.selectAll();
 					System.out.println("Cars: \n" + output);
-						break;
+					break;
 				}
 				case "2":
 				{
+					session.setCounterToDefault();
 					ExecutorService executorService = Executors.newFixedThreadPool(50);
 					for (int i = 0; i < 50; i++) {
 						executorService.execute(new Thread(new StressTest(session)));
 					}
-
-
 					break;
 				}
 				case "3":
@@ -77,14 +78,19 @@ public class Main {
 				}
 				case "4":
 				{
-					for (int i = 0; i < 5000; i++) session.createCar();
+					session.createCar(50000);
 
+					break;
+				}
+				case "5":
+				{
+					session.showCounter();
 					break;
 				}
 				default:
 				{
 					System.out.println("Prosimy o wybranie poprawnej opcji!\n");
-						break;
+					break;
 				}
 			}
 		}
