@@ -37,7 +37,7 @@ public class Main {
 
 
 		while(true){
-			System.out.println("\nWitam w wypozyczalni aut na 24h proszę wybrac jedna z ponizszych opcji:");
+			System.out.println("\nWitam w wypozyczalni aut na 24h prosze wybrac jedna z ponizszych opcji:");
 			System.out.println("\n0 - zamkniecie programu oraz wyczyszczenie tabeli Cars_status");
 			System.out.println("1 - Auta");
 			System.out.println("2 - Stress Test");
@@ -80,6 +80,7 @@ public class Main {
 				case "4":
 				{
 					session.createCar(50000);
+					System.out.println("Auta zostaly dodane");
 
 					break;
 				}

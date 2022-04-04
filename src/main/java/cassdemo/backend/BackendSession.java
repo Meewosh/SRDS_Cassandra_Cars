@@ -5,7 +5,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.Random;
 import java.util.UUID;
 
@@ -52,6 +51,9 @@ public class BackendSession {
 	private static final String CARS_FORMAT = "- %-10s  %-30s %-15s %-10s %-10s\n";
 
 	private int counter;
+	private int counterRead;
+	private int counterWrite;
+
 
 	private void prepareStatements() throws BackendException {
 		try {
@@ -99,6 +101,7 @@ public class BackendSession {
 		return builder.toString();
 	}
 
+	//wybranie konkretnego auta
 	public ResultSet selectConcreteCar(String carBrand, String carModel) throws BackendException {
 		BoundStatement bs = new BoundStatement(SELECT_ALL_CARS_BY_MODEL_AND_BRAND);
 		bs.bind(carModel, carBrand);
@@ -108,6 +111,7 @@ public class BackendSession {
 		try {
 			rs = session.execute(bs);
 			counter += 1;
+			counterRead += 1;
 		} catch (Exception e) {
 			throw new BackendException("Could not perform a query. " + e.getMessage() + ".", e);
 		}
@@ -115,7 +119,7 @@ public class BackendSession {
 	}
 
 	//sprawdzenie czy auto o podanej rejstracj i dacie jest zarezerwowane
-	//jeżeli rekord jest w bazie to jest zarezerwowane
+	//jezeli rekord jest w bazie to jest zarezerwowane
 	public boolean isCarReservedForDate(String registrationNumber, String date) throws BackendException {
 		BoundStatement bs = new BoundStatement(SELECT_CONCRETE_CAR_RESERVATION_BY_REGISTRATION_NUMBER);
 		bs.bind(registrationNumber, date);
@@ -124,6 +128,7 @@ public class BackendSession {
 		try {
 			rs = session.execute(bs);
 			counter += 1;
+			counterRead += 1;
 			if (rs.one() != null) {
 				return true;
 			} else {
@@ -134,7 +139,7 @@ public class BackendSession {
 		}
 	}
 
-	//sprawdzenie czy auto zostało dodane do bazy Reservation_Cars z poprawym rs_id oraz user_id
+	//sprawdzenie czy auto zostalo dodane do bazy Reservation_Cars z poprawym rs_id oraz user_id
 	public boolean getSpecificCarReservation(String registrationNumber, String date, UUID reservationId, UUID userId) throws BackendException {
 		BoundStatement bs = new BoundStatement(SELECT_CONCRETE_CAR_RESERVATION_BY_REGISTRATION_NUMBER);
 		bs.bind(registrationNumber, date);
@@ -143,6 +148,7 @@ public class BackendSession {
 		try {
 			rs = session.execute(bs);
 			counter += 1;
+			counterRead += 1;
 			List<Row> allRows = rs.all();
 			if (allRows.size() > 0) {
 				Row row = allRows.get(rs.all().size());
@@ -171,12 +177,13 @@ public class BackendSession {
 		try {
 			session.execute(bs);
 			counter += 1;
+			counterWrite += 1;
 		} catch (Exception e) {
 			throw new BackendException("Could not perform a query. " + e.getMessage() + ".", e);
 		}
 	}
 
-	//wprowadzenie rekordu do Reservation_by_user
+	//wprowadzenie rekordu do tabeli Reservation_by_user
 	public void insertIntoReservationByUser(UUID rs_id, String registrationNumber, UUID user_id, String date, String brand, String model) throws BackendException {
 		BoundStatement bs = new BoundStatement(INSERT_INTO_CARS_RESERVATION_BY_USER);
 		bs.bind(rs_id, registrationNumber, user_id, date, brand, model);
@@ -184,13 +191,14 @@ public class BackendSession {
 		try {
 			session.execute(bs);
 			counter += 1;
+			counterWrite += 1;
 		} catch (Exception e) {
 			throw new BackendException("Could not perform a query. " + e.getMessage() + ".", e);
 		}
 	}
 
 	//wprowadzenie auta do baz danych cars i cars_by_registration_number
-	public void upsertCar(String registrationNumber, String model, String brand, String productionYear, String color) throws BackendException {
+	public void insertCar(String registrationNumber, String model, String brand, String productionYear, String color) throws BackendException {
 		BoundStatement bs = new BoundStatement(INSERT_INTO_CARS);
 		bs.bind(registrationNumber, model, brand, productionYear, color);
 
@@ -248,22 +256,27 @@ public class BackendSession {
 			String productionYear = String.valueOf(rand.nextInt(high - low) + low);
 			int randomNumberOfColor = rand.nextInt(6);
 
-			upsertCar(registrationNumber,
+			insertCar(registrationNumber,
 					carTableModel[randomNumberOfCarModel],
 					carTableBrand[randomNumberOfCarBrand],
 					productionYear,
 					color[randomNumberOfColor]
 			);
-			logger.info("Dodano auto: " + carTableBrand[randomNumberOfCarBrand] + " " + carTableModel[randomNumberOfCarModel] + " " + registrationNumber);
+			//logger.info("Dodano auto: " + carTableBrand[randomNumberOfCarBrand] + " " + carTableModel[randomNumberOfCarModel] + " " + registrationNumber);
 		}
 	}
 
 	public void showCounter(){
-		System.out.println(counter);
+		System.out.println("Po stress tescie: ");
+		System.out.println("Liczba odczytow i zapisow: " + counter);
+		System.out.println("Liczba odczytow: " + counterRead);
+		System.out.println("Liczba zapisow: " + counterWrite);
 	}
 
 	public void setCounterToDefault(){
 		counter = 0;
+		counterRead = 0;
+		counterWrite = 0;
 	}
 
 	protected void finalize() {
