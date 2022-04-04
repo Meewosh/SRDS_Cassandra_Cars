@@ -12,15 +12,6 @@ CREATE TABLE Cars (
   PRIMARY KEY((brand, model), registrationNumber)
 );
 
-CREATE TABLE Cars_by_registrationNumber (
-  registrationNumber varchar,
-  model varchar,
-  brand varchar,
-  productionYear varchar,
-  color varchar,
-  PRIMARY KEY(registrationNumber)
-);
-
 CREATE TABLE Reservation_Cars (
   rs_id uuid,
   registrationNumber varchar,
