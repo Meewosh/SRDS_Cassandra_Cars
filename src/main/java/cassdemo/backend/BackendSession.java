@@ -155,7 +155,7 @@ public class BackendSession {
 				if ((row.getUUID("rs_id").compareTo(reservationId) == 0) && (row.getUUID("user_id").compareTo(userId) == 0)){
 					return true;
 				} else {
-					logger.warn("UserID in DB: " + row.getUUID("user_id") + "User expected: " + userId +
+					logger.error("UserID in DB: " + row.getUUID("user_id") + "User expected: " + userId +
 							"ReservationID in DB: " + row.getUUID("rs_id") + "ReservationID expected: "+ reservationId);
 					return false;
 				}

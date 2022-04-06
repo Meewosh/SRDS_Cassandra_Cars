@@ -79,7 +79,7 @@ public class Main {
 				}
 				case "4":
 				{
-					session.createCar(50000);
+					session.createCar(8000);
 					System.out.println("Auta zostaly dodane");
 
 					break;

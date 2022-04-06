@@ -37,7 +37,7 @@ public class StressTest extends Thread {
         // Stress test ma nacelu pokazac, ze przy odczycie z bazy danych zaraz po zapisie istenieje szansa odczytamy pusta wartosc
         // przy Consistency level ONE
 
-        for (int j = 0; j < 1000; j++) {
+        for (int j = 0; j < 3000; j++) {
 
             String randomCarBrand = randomizeCar(listOfCarBrands);
             String randomCarModel = randomizeCar(listOfCarModels);
@@ -93,8 +93,8 @@ public class StressTest extends Thread {
 
     private String generateRandomDate() {
         Random random = new Random();
-        int minDay = (int) LocalDate.of(2022, 1, 1).toEpochDay();
-        int maxDay = (int) LocalDate.of(2022, 6, 30).toEpochDay();
+        int minDay = (int) LocalDate.of(2022, 4, 1).toEpochDay();
+        int maxDay = (int) LocalDate.of(2022, 4, 30).toEpochDay();
         long randomDay = minDay + random.nextInt(maxDay - minDay);
         LocalDate randomDate = LocalDate.ofEpochDay(randomDay);
 
