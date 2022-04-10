@@ -7,6 +7,7 @@ import com.datastax.driver.core.Row;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -36,9 +37,9 @@ public class StressTest extends Thread {
 
         // Stress test ma nacelu pokazac, ze przy odczycie z bazy danych zaraz po zapisie istenieje szansa odczytamy pusta wartosc
         // przy Consistency level ONE
-
+        long start = System.currentTimeMillis();
         for (int j = 0; j < 3000; j++) {
-
+            long zapisAutaStart = System.currentTimeMillis();
             String randomCarBrand = randomizeCar(listOfCarBrands);
             String randomCarModel = randomizeCar(listOfCarModels);
 
@@ -52,25 +53,28 @@ public class StressTest extends Thread {
                 String randomDate = generateRandomDate();
 
                 boolean isCarAvailable = checkCarAvailability(registrationNumber, randomDate);
-
                 if (isCarAvailable) {
                     UUID reservationId = UUID.randomUUID();
                     createNewReservationForCar(reservationId, userId, registrationNumber, randomDate);
+                    Thread.sleep(15); // czas na synchronizacje miedzy serverami
                     boolean isCarCorrectlyReserved = checkCarReservation(reservationId, userId, registrationNumber, randomDate);
 
                     if (isCarCorrectlyReserved) {
-                        logger.info("Car sucessfully added to reservation_cars");
                         createNewReservationForUser(reservationId, userId, registrationNumber, randomDate, randomCarBrand, randomCarModel);
+                        long zapisAutaStop1 = System.currentTimeMillis();
+                        logger.info("Car sucessfully added to reservation_cars | Czas wykonania operacji : " + (zapisAutaStop1 - zapisAutaStart) + "ms");
                     }
                 } else {
-                    logger.info("Car is not available");
+                    long zapisAutaStop2 = System.currentTimeMillis();
+                    logger.info("Car is not available | Czas wykonania operacji : " + (zapisAutaStop2 - zapisAutaStart) + "ms");
                 }
 
-            } catch (BackendException e) {
+            } catch (BackendException | InterruptedException e) {
                 e.printStackTrace();
             }
         }
-        logger.info("Koniec");
+        long end = System.currentTimeMillis();
+        logger.info("Koniec | Czas trwania testu dla watku: "  + (end - start) / 1000  + "s" );
 
     }
 

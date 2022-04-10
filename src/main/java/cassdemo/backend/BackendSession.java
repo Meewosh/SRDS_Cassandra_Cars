@@ -50,9 +50,9 @@ public class BackendSession {
 
 	private static final String CARS_FORMAT = "- %-10s  %-30s %-15s %-10s %-10s\n";
 
-	private int counter;
-	private int counterRead;
-	private int counterWrite;
+	private volatile int counter;
+	private volatile int counterRead;
+	private volatile int counterWrite;
 
 
 	private void prepareStatements() throws BackendException {
@@ -110,8 +110,10 @@ public class BackendSession {
 
 		try {
 			rs = session.execute(bs);
-			counter += 1;
-			counterRead += 1;
+			synchronized (this){
+				counter += 1;
+				counterRead += 1;
+			}
 		} catch (Exception e) {
 			throw new BackendException("Could not perform a query. " + e.getMessage() + ".", e);
 		}
@@ -127,8 +129,11 @@ public class BackendSession {
 		//boolean isReserved = false;
 		try {
 			rs = session.execute(bs);
-			counter += 1;
-			counterRead += 1;
+			synchronized (this){
+				counter += 1;
+				counterRead += 1;
+			}
+
 			if (rs.one() != null) {
 				return true;
 			} else {
@@ -147,8 +152,10 @@ public class BackendSession {
 		ResultSet rs = null;
 		try {
 			rs = session.execute(bs);
-			counter += 1;
-			counterRead += 1;
+			synchronized (this){
+				counter += 1;
+				counterRead += 1;
+			}
 			List<Row> allRows = rs.all();
 			if (allRows.size() > 0) {
 				Row row = allRows.get(rs.all().size());
@@ -176,8 +183,11 @@ public class BackendSession {
 
 		try {
 			session.execute(bs);
-			counter += 1;
-			counterWrite += 1;
+			synchronized (this){
+				counter += 1;
+				counterWrite += 1;
+			}
+
 		} catch (Exception e) {
 			throw new BackendException("Could not perform a query. " + e.getMessage() + ".", e);
 		}
@@ -190,8 +200,10 @@ public class BackendSession {
 
 		try {
 			session.execute(bs);
-			counter += 1;
-			counterWrite += 1;
+			synchronized (this){
+				counter += 1;
+				counterWrite += 1;
+			}
 		} catch (Exception e) {
 			throw new BackendException("Could not perform a query. " + e.getMessage() + ".", e);
 		}
