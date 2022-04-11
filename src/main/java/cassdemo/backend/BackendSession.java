@@ -158,7 +158,7 @@ public class BackendSession {
 			}
 			List<Row> allRows = rs.all();
 			if (allRows.size() > 0) {
-				Row row = allRows.get(rs.all().size());
+				Row row = allRows.get(allRows.size() - 1);
 				if ((row.getUUID("rs_id").compareTo(reservationId) == 0) && (row.getUUID("user_id").compareTo(userId) == 0)){
 					return true;
 				} else {
